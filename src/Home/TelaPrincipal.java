@@ -40,6 +40,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
         Card2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -56,13 +57,13 @@ public class TelaPrincipal extends javax.swing.JFrame {
         PainelBotao.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         bt_Cadastro.setBackground(new java.awt.Color(97, 212, 195));
-        bt_Cadastro.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        bt_Cadastro.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         bt_Cadastro.setForeground(new java.awt.Color(255, 255, 255));
         bt_Cadastro.setText("Cadastro");
         bt_Cadastro.setBorderPainted(false);
         bt_Cadastro.setDefaultCapable(false);
         bt_Cadastro.setFocusPainted(false);
-        bt_Cadastro.setPreferredSize(new java.awt.Dimension(100, 30));
+        bt_Cadastro.setPreferredSize(new java.awt.Dimension(170, 40));
         bt_Cadastro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bt_CadastroActionPerformed(evt);
@@ -71,14 +72,14 @@ public class TelaPrincipal extends javax.swing.JFrame {
         PainelBotao.add(bt_Cadastro, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 130, 190, -1));
 
         bt_Vendas.setBackground(new java.awt.Color(97, 212, 195));
-        bt_Vendas.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        bt_Vendas.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         bt_Vendas.setForeground(new java.awt.Color(255, 255, 255));
         bt_Vendas.setText("Vendas");
         bt_Vendas.setBorder(null);
         bt_Vendas.setBorderPainted(false);
         bt_Vendas.setFocusPainted(false);
         bt_Vendas.setFocusable(false);
-        bt_Vendas.setPreferredSize(new java.awt.Dimension(100, 30));
+        bt_Vendas.setPreferredSize(new java.awt.Dimension(170, 40));
         bt_Vendas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bt_VendasActionPerformed(evt);
@@ -87,14 +88,14 @@ public class TelaPrincipal extends javax.swing.JFrame {
         PainelBotao.add(bt_Vendas, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 280, 190, -1));
 
         bt_Pesquisar.setBackground(new java.awt.Color(97, 212, 195));
-        bt_Pesquisar.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        bt_Pesquisar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         bt_Pesquisar.setForeground(new java.awt.Color(255, 255, 255));
         bt_Pesquisar.setText("Pesquisar/Editar");
         bt_Pesquisar.setBorder(null);
         bt_Pesquisar.setBorderPainted(false);
         bt_Pesquisar.setFocusPainted(false);
         bt_Pesquisar.setFocusable(false);
-        bt_Pesquisar.setPreferredSize(new java.awt.Dimension(100, 30));
+        bt_Pesquisar.setPreferredSize(new java.awt.Dimension(170, 40));
         bt_Pesquisar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bt_PesquisarActionPerformed(evt);
@@ -103,20 +104,20 @@ public class TelaPrincipal extends javax.swing.JFrame {
         PainelBotao.add(bt_Pesquisar, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 180, 190, -1));
 
         bt_CadastroExtra.setBackground(new java.awt.Color(97, 212, 195));
-        bt_CadastroExtra.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        bt_CadastroExtra.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         bt_CadastroExtra.setForeground(new java.awt.Color(255, 255, 255));
         bt_CadastroExtra.setText("Cadastro Extra");
         bt_CadastroExtra.setBorder(null);
         bt_CadastroExtra.setBorderPainted(false);
         bt_CadastroExtra.setFocusPainted(false);
         bt_CadastroExtra.setFocusable(false);
-        bt_CadastroExtra.setPreferredSize(new java.awt.Dimension(100, 30));
+        bt_CadastroExtra.setPreferredSize(new java.awt.Dimension(170, 40));
         bt_CadastroExtra.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bt_CadastroExtraActionPerformed(evt);
             }
         });
-        PainelBotao.add(bt_CadastroExtra, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 230, 190, -1));
+        PainelBotao.add(bt_CadastroExtra, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 230, 190, -1));
 
         CardPrincipal.setEnabled(false);
         CardPrincipal.setLayout(new java.awt.CardLayout());
@@ -131,6 +132,8 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/telaPrincipal/imagens/serv.png"))); // NOI18N
 
+        jLabel11.setText("Animal");
+
         javax.swing.GroupLayout Card1Layout = new javax.swing.GroupLayout(Card1);
         Card1.setLayout(Card1Layout);
         Card1Layout.setHorizontalGroup(
@@ -138,25 +141,30 @@ public class TelaPrincipal extends javax.swing.JFrame {
             .addGroup(Card1Layout.createSequentialGroup()
                 .addGap(81, 81, 81)
                 .addGroup(Card1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel5)
+                    .addGroup(Card1Layout.createSequentialGroup()
+                        .addComponent(jLabel5)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel11))
                     .addComponent(jLabel6))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 218, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 159, Short.MAX_VALUE)
                 .addGroup(Card1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(Card1Layout.createSequentialGroup()
-                        .addComponent(jLabel8)
-                        .addGap(163, 163, 163))
-                    .addGroup(Card1Layout.createSequentialGroup()
-                        .addComponent(jLabel7)
-                        .addGap(27, 27, 27))))
+                    .addComponent(jLabel8)
+                    .addComponent(jLabel7))
+                .addGap(163, 163, 163))
         );
         Card1Layout.setVerticalGroup(
             Card1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(Card1Layout.createSequentialGroup()
-                .addGap(105, 105, 105)
-                .addGroup(Card1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel5)
-                    .addComponent(jLabel7))
-                .addGap(83, 83, 83)
+                .addGroup(Card1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(Card1Layout.createSequentialGroup()
+                        .addGap(96, 96, 96)
+                        .addGroup(Card1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel5)
+                            .addComponent(jLabel7)))
+                    .addGroup(Card1Layout.createSequentialGroup()
+                        .addGap(119, 119, 119)
+                        .addComponent(jLabel11)))
+                .addGap(92, 92, 92)
                 .addGroup(Card1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel6)
                     .addComponent(jLabel8))
@@ -180,28 +188,31 @@ public class TelaPrincipal extends javax.swing.JFrame {
         Card2Layout.setHorizontalGroup(
             Card2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(Card2Layout.createSequentialGroup()
-                .addGap(87, 87, 87)
+                .addGap(84, 84, 84)
                 .addGroup(Card2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1)
-                    .addComponent(jLabel2))
-                .addGap(179, 179, 179)
-                .addGroup(Card2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel3)
-                    .addComponent(jLabel4))
-                .addContainerGap(196, Short.MAX_VALUE))
+                    .addGroup(Card2Layout.createSequentialGroup()
+                        .addComponent(jLabel2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel4)
+                        .addGap(185, 185, 185))
+                    .addGroup(Card2Layout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addGap(182, 182, 182)
+                        .addComponent(jLabel3)
+                        .addContainerGap(196, Short.MAX_VALUE))))
         );
         Card2Layout.setVerticalGroup(
             Card2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(Card2Layout.createSequentialGroup()
-                .addGap(120, 120, 120)
-                .addGroup(Card2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel1)
-                    .addComponent(jLabel3))
-                .addGap(98, 98, 98)
-                .addGroup(Card2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGap(94, 94, 94)
+                .addGroup(Card2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel3)
+                    .addComponent(jLabel1))
+                .addGap(92, 92, 92)
+                .addGroup(Card2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel2)
                     .addComponent(jLabel4))
-                .addContainerGap(105, Short.MAX_VALUE))
+                .addContainerGap(137, Short.MAX_VALUE))
         );
 
         CardPrincipal.add(Card2, "tela2");
@@ -343,6 +354,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JButton bt_Vendas;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
