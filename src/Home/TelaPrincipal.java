@@ -47,6 +47,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         Card3 = new javax.swing.JPanel();
         jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
 
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         setLocationByPlatform(true);
@@ -209,6 +210,8 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/telaPrincipal/imagens/employees.png"))); // NOI18N
 
+        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/telaPrincipal/imagens/raça.png"))); // NOI18N
+
         javax.swing.GroupLayout Card3Layout = new javax.swing.GroupLayout(Card3);
         Card3.setLayout(Card3Layout);
         Card3Layout.setHorizontalGroup(
@@ -216,13 +219,17 @@ public class TelaPrincipal extends javax.swing.JFrame {
             .addGroup(Card3Layout.createSequentialGroup()
                 .addGap(90, 90, 90)
                 .addComponent(jLabel9)
-                .addContainerGap(436, Short.MAX_VALUE))
+                .addGap(185, 185, 185)
+                .addComponent(jLabel10)
+                .addContainerGap(187, Short.MAX_VALUE))
         );
         Card3Layout.setVerticalGroup(
             Card3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(Card3Layout.createSequentialGroup()
                 .addGap(125, 125, 125)
-                .addComponent(jLabel9)
+                .addGroup(Card3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel10)
+                    .addComponent(jLabel9))
                 .addContainerGap(262, Short.MAX_VALUE))
         );
 
@@ -335,6 +342,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JButton bt_Pesquisar;
     private javax.swing.JButton bt_Vendas;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
