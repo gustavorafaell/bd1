@@ -36,29 +36,29 @@ public class TelaPrincipal extends javax.swing.JFrame {
         bt_CadastroExtra = new javax.swing.JButton();
         CardPrincipal = new javax.swing.JPanel();
         Card1 = new javax.swing.JPanel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
+        bt_Cad_Produto = new javax.swing.JButton();
+        bt_Cad_Cliente = new javax.swing.JButton();
+        bt_Cad_Animal = new javax.swing.JButton();
         Card2 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
+        jButton12 = new javax.swing.JButton();
+        jButton11 = new javax.swing.JButton();
+        jButton13 = new javax.swing.JButton();
         Card3 = new javax.swing.JPanel();
-        jLabel9 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
+        jButton5 = new javax.swing.JButton();
+        jButton7 = new javax.swing.JButton();
 
+        setTitle("PeShopt ");
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         setLocationByPlatform(true);
+        setResizable(false);
 
         PainelBotao.setBackground(new java.awt.Color(36, 47, 65));
         PainelBotao.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         bt_Cadastro.setBackground(new java.awt.Color(97, 212, 195));
         bt_Cadastro.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        bt_Cadastro.setForeground(new java.awt.Color(255, 255, 255));
+        bt_Cadastro.setForeground(new java.awt.Color(36, 47, 65));
         bt_Cadastro.setText("Cadastro");
         bt_Cadastro.setBorderPainted(false);
         bt_Cadastro.setDefaultCapable(false);
@@ -73,7 +73,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         bt_Vendas.setBackground(new java.awt.Color(97, 212, 195));
         bt_Vendas.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        bt_Vendas.setForeground(new java.awt.Color(255, 255, 255));
+        bt_Vendas.setForeground(new java.awt.Color(36, 47, 65));
         bt_Vendas.setText("Vendas");
         bt_Vendas.setBorder(null);
         bt_Vendas.setBorderPainted(false);
@@ -89,7 +89,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         bt_Pesquisar.setBackground(new java.awt.Color(97, 212, 195));
         bt_Pesquisar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        bt_Pesquisar.setForeground(new java.awt.Color(255, 255, 255));
+        bt_Pesquisar.setForeground(new java.awt.Color(36, 47, 65));
         bt_Pesquisar.setText("Pesquisar/Editar");
         bt_Pesquisar.setBorder(null);
         bt_Pesquisar.setBorderPainted(false);
@@ -105,7 +105,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         bt_CadastroExtra.setBackground(new java.awt.Color(97, 212, 195));
         bt_CadastroExtra.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        bt_CadastroExtra.setForeground(new java.awt.Color(255, 255, 255));
+        bt_CadastroExtra.setForeground(new java.awt.Color(36, 47, 65));
         bt_CadastroExtra.setText("Cadastro Extra");
         bt_CadastroExtra.setBorder(null);
         bt_CadastroExtra.setBorderPainted(false);
@@ -124,124 +124,181 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         Card1.setBackground(new java.awt.Color(153, 204, 255));
 
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/telaPrincipal/imagens/pata.png"))); // NOI18N
+        bt_Cad_Produto.setBackground(new java.awt.Color(153, 204, 255));
+        bt_Cad_Produto.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        bt_Cad_Produto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/telaPrincipal/imagens/produt.png"))); // NOI18N
+        bt_Cad_Produto.setText("Produto");
+        bt_Cad_Produto.setBorderPainted(false);
+        bt_Cad_Produto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bt_Cad_ProdutoActionPerformed(evt);
+            }
+        });
 
-        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/telaPrincipal/imagens/client.png"))); // NOI18N
+        bt_Cad_Cliente.setBackground(new java.awt.Color(153, 204, 255));
+        bt_Cad_Cliente.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        bt_Cad_Cliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/telaPrincipal/imagens/client.png"))); // NOI18N
+        bt_Cad_Cliente.setText("Cliente");
+        bt_Cad_Cliente.setBorderPainted(false);
+        bt_Cad_Cliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bt_Cad_ClienteActionPerformed(evt);
+            }
+        });
 
-        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/telaPrincipal/imagens/produt.png"))); // NOI18N
-
-        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/telaPrincipal/imagens/serv.png"))); // NOI18N
-
-        jLabel11.setText("Animal");
+        bt_Cad_Animal.setBackground(new java.awt.Color(153, 204, 255));
+        bt_Cad_Animal.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        bt_Cad_Animal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/telaPrincipal/imagens/pata.png"))); // NOI18N
+        bt_Cad_Animal.setText("Animal");
+        bt_Cad_Animal.setBorderPainted(false);
+        bt_Cad_Animal.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bt_Cad_AnimalActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout Card1Layout = new javax.swing.GroupLayout(Card1);
         Card1.setLayout(Card1Layout);
         Card1Layout.setHorizontalGroup(
             Card1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(Card1Layout.createSequentialGroup()
-                .addGap(81, 81, 81)
+                .addGap(67, 67, 67)
                 .addGroup(Card1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(Card1Layout.createSequentialGroup()
-                        .addComponent(jLabel5)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabel11))
-                    .addComponent(jLabel6))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 159, Short.MAX_VALUE)
-                .addGroup(Card1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel8)
-                    .addComponent(jLabel7))
-                .addGap(163, 163, 163))
+                        .addComponent(bt_Cad_Cliente)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(Card1Layout.createSequentialGroup()
+                        .addComponent(bt_Cad_Animal)
+                        .addGap(160, 160, 160)
+                        .addComponent(bt_Cad_Produto)
+                        .addGap(117, 117, 117))))
         );
         Card1Layout.setVerticalGroup(
             Card1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(Card1Layout.createSequentialGroup()
-                .addGroup(Card1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(Card1Layout.createSequentialGroup()
-                        .addGap(96, 96, 96)
-                        .addGroup(Card1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel5)
-                            .addComponent(jLabel7)))
-                    .addGroup(Card1Layout.createSequentialGroup()
-                        .addGap(119, 119, 119)
-                        .addComponent(jLabel11)))
-                .addGap(92, 92, 92)
-                .addGroup(Card1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel6)
-                    .addComponent(jLabel8))
-                .addContainerGap(135, Short.MAX_VALUE))
+                .addGap(106, 106, 106)
+                .addGroup(Card1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(bt_Cad_Animal)
+                    .addComponent(bt_Cad_Produto))
+                .addGap(82, 82, 82)
+                .addComponent(bt_Cad_Cliente)
+                .addContainerGap(91, Short.MAX_VALUE))
         );
 
         CardPrincipal.add(Card1, "tela1");
 
-        Card2.setBackground(new java.awt.Color(255, 204, 204));
+        Card2.setBackground(new java.awt.Color(153, 204, 255));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/telaPrincipal/imagens/pata.png"))); // NOI18N
+        jButton12.setBackground(new java.awt.Color(153, 204, 255));
+        jButton12.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jButton12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/telaPrincipal/imagens/pata.png"))); // NOI18N
+        jButton12.setText("Animal");
+        jButton12.setBorderPainted(false);
+        jButton12.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton12ActionPerformed(evt);
+            }
+        });
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/telaPrincipal/imagens/client.png"))); // NOI18N
+        jButton11.setBackground(new java.awt.Color(153, 204, 255));
+        jButton11.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jButton11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/telaPrincipal/imagens/produt.png"))); // NOI18N
+        jButton11.setText("Produto");
+        jButton11.setBorderPainted(false);
+        jButton11.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton11ActionPerformed(evt);
+            }
+        });
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/telaPrincipal/imagens/produt.png"))); // NOI18N
-
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/telaPrincipal/imagens/serv.png"))); // NOI18N
+        jButton13.setBackground(new java.awt.Color(153, 204, 255));
+        jButton13.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jButton13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/telaPrincipal/imagens/client.png"))); // NOI18N
+        jButton13.setText("Cliente");
+        jButton13.setBorderPainted(false);
+        jButton13.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton13ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout Card2Layout = new javax.swing.GroupLayout(Card2);
         Card2.setLayout(Card2Layout);
         Card2Layout.setHorizontalGroup(
             Card2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(Card2Layout.createSequentialGroup()
-                .addGap(84, 84, 84)
+                .addGap(67, 67, 67)
                 .addGroup(Card2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(Card2Layout.createSequentialGroup()
-                        .addComponent(jLabel2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel4)
-                        .addGap(185, 185, 185))
+                        .addComponent(jButton13)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(Card2Layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addGap(182, 182, 182)
-                        .addComponent(jLabel3)
-                        .addContainerGap(196, Short.MAX_VALUE))))
+                        .addComponent(jButton12)
+                        .addGap(160, 160, 160)
+                        .addComponent(jButton11)
+                        .addGap(117, 117, 117))))
         );
         Card2Layout.setVerticalGroup(
             Card2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(Card2Layout.createSequentialGroup()
-                .addGap(94, 94, 94)
-                .addGroup(Card2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel3)
-                    .addComponent(jLabel1))
-                .addGap(92, 92, 92)
-                .addGroup(Card2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel2)
-                    .addComponent(jLabel4))
-                .addContainerGap(137, Short.MAX_VALUE))
+                .addGap(106, 106, 106)
+                .addGroup(Card2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton12)
+                    .addComponent(jButton11))
+                .addGap(82, 82, 82)
+                .addComponent(jButton13)
+                .addContainerGap(91, Short.MAX_VALUE))
         );
 
-        CardPrincipal.add(Card2, "tela2");
+        CardPrincipal.add(Card2, "card3");
 
-        Card3.setBackground(new java.awt.Color(255, 255, 102));
+        Card3.setBackground(new java.awt.Color(153, 204, 255));
 
-        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/telaPrincipal/imagens/employees.png"))); // NOI18N
+        jButton1.setBackground(new java.awt.Color(153, 204, 255));
+        jButton1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/telaPrincipal/imagens/employees.png"))); // NOI18N
+        jButton1.setText("Funcionario");
+        jButton1.setBorderPainted(false);
+        jButton1.setFocusPainted(false);
 
-        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/telaPrincipal/imagens/raça.png"))); // NOI18N
+        jButton5.setBackground(new java.awt.Color(153, 204, 255));
+        jButton5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/telaPrincipal/imagens/serv.png"))); // NOI18N
+        jButton5.setText("Serviço");
+        jButton5.setBorderPainted(false);
+        jButton5.setFocusPainted(false);
+
+        jButton7.setBackground(new java.awt.Color(153, 204, 255));
+        jButton7.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jButton7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/telaPrincipal/imagens/raça.png"))); // NOI18N
+        jButton7.setText("Raça");
+        jButton7.setBorderPainted(false);
+        jButton7.setFocusPainted(false);
 
         javax.swing.GroupLayout Card3Layout = new javax.swing.GroupLayout(Card3);
         Card3.setLayout(Card3Layout);
         Card3Layout.setHorizontalGroup(
             Card3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(Card3Layout.createSequentialGroup()
-                .addGap(90, 90, 90)
-                .addComponent(jLabel9)
-                .addGap(185, 185, 185)
-                .addComponent(jLabel10)
-                .addContainerGap(187, Short.MAX_VALUE))
+                .addGap(67, 67, 67)
+                .addGroup(Card3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButton7)
+                    .addGroup(Card3Layout.createSequentialGroup()
+                        .addComponent(jButton1)
+                        .addGap(160, 160, 160)
+                        .addComponent(jButton5)))
+                .addGap(117, 117, 117))
         );
         Card3Layout.setVerticalGroup(
             Card3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(Card3Layout.createSequentialGroup()
-                .addGap(125, 125, 125)
-                .addGroup(Card3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel10)
-                    .addComponent(jLabel9))
-                .addContainerGap(262, Short.MAX_VALUE))
+                .addGap(106, 106, 106)
+                .addGroup(Card3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton1)
+                    .addComponent(jButton5))
+                .addGap(82, 82, 82)
+                .addComponent(jButton7)
+                .addGap(54, 54, 54))
         );
 
         CardPrincipal.add(Card3, "card4");
@@ -252,7 +309,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(PainelBotao, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(CardPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -264,6 +321,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         PainelBotao.getAccessibleContext().setAccessibleName("");
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void bt_CadastroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_CadastroActionPerformed
@@ -307,6 +365,32 @@ public class TelaPrincipal extends javax.swing.JFrame {
         
     }//GEN-LAST:event_bt_CadastroExtraActionPerformed
 
+    private void bt_Cad_ProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_Cad_ProdutoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_bt_Cad_ProdutoActionPerformed
+
+    private void bt_Cad_ClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_Cad_ClienteActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_bt_Cad_ClienteActionPerformed
+
+    private void bt_Cad_AnimalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_Cad_AnimalActionPerformed
+        // TODO add your handling code here:
+        
+        
+    }//GEN-LAST:event_bt_Cad_AnimalActionPerformed
+
+    private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton12ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton12ActionPerformed
+
+    private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton11ActionPerformed
+
+    private void jButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton13ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton13ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -348,20 +432,18 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JPanel Card3;
     private javax.swing.JPanel CardPrincipal;
     private javax.swing.JPanel PainelBotao;
+    private javax.swing.JButton bt_Cad_Animal;
+    private javax.swing.JButton bt_Cad_Cliente;
+    private javax.swing.JButton bt_Cad_Produto;
     private javax.swing.JButton bt_Cadastro;
     private javax.swing.JButton bt_CadastroExtra;
     private javax.swing.JButton bt_Pesquisar;
     private javax.swing.JButton bt_Vendas;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton11;
+    private javax.swing.JButton jButton12;
+    private javax.swing.JButton jButton13;
+    private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton7;
     // End of variables declaration//GEN-END:variables
 }
