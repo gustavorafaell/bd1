@@ -182,7 +182,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
                     .addComponent(bt_Cad_Produto))
                 .addGap(82, 82, 82)
                 .addComponent(bt_Cad_Cliente)
-                .addContainerGap(91, Short.MAX_VALUE))
+                .addContainerGap(54, Short.MAX_VALUE))
         );
 
         CardPrincipal.add(Card1, "tela1");
@@ -247,7 +247,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
                     .addComponent(jButton11))
                 .addGap(82, 82, 82)
                 .addComponent(jButton13)
-                .addContainerGap(91, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         CardPrincipal.add(Card2, "card3");
@@ -381,6 +381,11 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
     private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton12ActionPerformed
         // TODO add your handling code here:
+        
+       // TelaCadastroAnimal tela = new TelaCadastroAnimal();
+       //tela.setVisible(true);
+       new TelaCadastroAnimal().setVisible(true);
+       
     }//GEN-LAST:event_jButton12ActionPerformed
 
     private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
