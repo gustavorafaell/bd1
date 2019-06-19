@@ -40,7 +40,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         bt_Cad_Cliente = new javax.swing.JButton();
         bt_Cad_Animal = new javax.swing.JButton();
         Card2 = new javax.swing.JPanel();
-        jButton12 = new javax.swing.JButton();
+        bt_buscarAnimal = new javax.swing.JButton();
         jButton11 = new javax.swing.JButton();
         jButton13 = new javax.swing.JButton();
         Card3 = new javax.swing.JPanel();
@@ -189,14 +189,14 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         Card2.setBackground(new java.awt.Color(153, 204, 255));
 
-        jButton12.setBackground(new java.awt.Color(153, 204, 255));
-        jButton12.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jButton12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/telaPrincipal/imagens/pata.png"))); // NOI18N
-        jButton12.setText("Animal");
-        jButton12.setBorderPainted(false);
-        jButton12.addActionListener(new java.awt.event.ActionListener() {
+        bt_buscarAnimal.setBackground(new java.awt.Color(153, 204, 255));
+        bt_buscarAnimal.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        bt_buscarAnimal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/telaPrincipal/imagens/pata.png"))); // NOI18N
+        bt_buscarAnimal.setText("Animal");
+        bt_buscarAnimal.setBorderPainted(false);
+        bt_buscarAnimal.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton12ActionPerformed(evt);
+                bt_buscarAnimalActionPerformed(evt);
             }
         });
 
@@ -233,7 +233,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
                         .addComponent(jButton13)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(Card2Layout.createSequentialGroup()
-                        .addComponent(jButton12)
+                        .addComponent(bt_buscarAnimal)
                         .addGap(160, 160, 160)
                         .addComponent(jButton11)
                         .addGap(117, 117, 117))))
@@ -243,7 +243,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
             .addGroup(Card2Layout.createSequentialGroup()
                 .addGap(106, 106, 106)
                 .addGroup(Card2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton12)
+                    .addComponent(bt_buscarAnimal)
                     .addComponent(jButton11))
                 .addGap(82, 82, 82)
                 .addComponent(jButton13)
@@ -375,18 +375,17 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
     private void bt_Cad_AnimalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_Cad_AnimalActionPerformed
         // TODO add your handling code here:
-        
+        TelaCadastroAnimal tela = new TelaCadastroAnimal();
+       tela.setVisible(true);
         
     }//GEN-LAST:event_bt_Cad_AnimalActionPerformed
 
-    private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton12ActionPerformed
+    private void bt_buscarAnimalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_buscarAnimalActionPerformed
         // TODO add your handling code here:
         
-       // TelaCadastroAnimal tela = new TelaCadastroAnimal();
-       //tela.setVisible(true);
-       new TelaCadastroAnimal().setVisible(true);
+       //new TelaCadastroAnimal().setVisible(true);
        
-    }//GEN-LAST:event_jButton12ActionPerformed
+    }//GEN-LAST:event_bt_buscarAnimalActionPerformed
 
     private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
         // TODO add your handling code here:
@@ -444,9 +443,9 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JButton bt_CadastroExtra;
     private javax.swing.JButton bt_Pesquisar;
     private javax.swing.JButton bt_Vendas;
+    private javax.swing.JButton bt_buscarAnimal;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton11;
-    private javax.swing.JButton jButton12;
     private javax.swing.JButton jButton13;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton7;
