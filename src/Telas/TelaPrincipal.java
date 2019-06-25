@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Home;
+package Telas;
 
 import java.awt.CardLayout;
 
@@ -164,14 +164,12 @@ public class TelaPrincipal extends javax.swing.JFrame {
             .addGroup(Card1Layout.createSequentialGroup()
                 .addGap(67, 67, 67)
                 .addGroup(Card1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(Card1Layout.createSequentialGroup()
-                        .addComponent(bt_Cad_Cliente)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(bt_Cad_Cliente)
                     .addGroup(Card1Layout.createSequentialGroup()
                         .addComponent(bt_Cad_Animal)
                         .addGap(160, 160, 160)
-                        .addComponent(bt_Cad_Produto)
-                        .addGap(117, 117, 117))))
+                        .addComponent(bt_Cad_Produto)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         Card1Layout.setVerticalGroup(
             Card1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -229,14 +227,12 @@ public class TelaPrincipal extends javax.swing.JFrame {
             .addGroup(Card2Layout.createSequentialGroup()
                 .addGap(67, 67, 67)
                 .addGroup(Card2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(Card2Layout.createSequentialGroup()
-                        .addComponent(jButton13)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jButton13)
                     .addGroup(Card2Layout.createSequentialGroup()
                         .addComponent(bt_buscarAnimal)
                         .addGap(160, 160, 160)
-                        .addComponent(jButton11)
-                        .addGap(117, 117, 117))))
+                        .addComponent(jButton11)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         Card2Layout.setVerticalGroup(
             Card2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
