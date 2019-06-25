@@ -70,12 +70,12 @@
                               <Group type="102" attributes="0">
                                   <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                  <Component id="campoNomeCliente" min="-2" pref="419" max="-2" attributes="0"/>
+                                  <Component id="txtNomeCliente" min="-2" pref="419" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" attributes="0">
                                   <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
-                                  <Component id="campoCodigoAnimal" min="-2" pref="147" max="-2" attributes="0"/>
+                                  <Component id="txtCodigoAnimal" min="-2" pref="147" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
@@ -83,7 +83,7 @@
                           <Group type="102" attributes="0">
                               <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="campoNascimento" min="-2" pref="105" max="-2" attributes="0"/>
+                              <Component id="txtNascimentoAnimal" min="-2" pref="105" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
@@ -99,7 +99,7 @@
                                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                       <Component id="itemSexo" min="-2" pref="146" max="-2" attributes="0"/>
                                   </Group>
-                                  <Component id="campoNomeDono" min="-2" pref="375" max="-2" attributes="0"/>
+                                  <Component id="txtNomeDonoAnimal" min="-2" pref="375" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="bt_pesquisarCadastro" min="-2" pref="41" max="-2" attributes="0"/>
@@ -128,19 +128,19 @@
                   <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="campoCodigoAnimal" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtCodigoAnimal" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="campoNomeCliente" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtNomeCliente" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
                           <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="campoNomeDono" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="txtNomeDonoAnimal" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <Group type="102" alignment="1" attributes="0">
@@ -158,7 +158,7 @@
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel7" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="campoNascimento" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtNascimentoAnimal" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="32767" attributes="0"/>
                   <Component id="bt_SalvaAnimal" min="-2" max="-2" attributes="0"/>
@@ -199,16 +199,16 @@
             <Property name="text" type="java.lang.String" value="Ra&#xe7;a:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="campoCodigoAnimal">
+        <Component class="javax.swing.JTextField" name="txtCodigoAnimal">
         </Component>
-        <Component class="javax.swing.JTextField" name="campoNomeCliente">
+        <Component class="javax.swing.JTextField" name="txtNomeCliente">
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="campoNomeClienteActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtNomeClienteActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JTextField" name="campoNomeDono">
+        <Component class="javax.swing.JTextField" name="txtNomeDonoAnimal">
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="campoNomeDonoActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtNomeDonoAnimalActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JComboBox" name="itemRa&#xe7;a">
@@ -265,9 +265,9 @@
             <Property name="text" type="java.lang.String" value="Nascimento:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="campoNascimento">
+        <Component class="javax.swing.JTextField" name="txtNascimentoAnimal">
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="campoNascimentoActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtNascimentoAnimalActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JButton" name="bt_pesquisarCadastro">

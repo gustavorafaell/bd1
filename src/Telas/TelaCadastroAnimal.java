@@ -33,14 +33,14 @@ public class TelaCadastroAnimal extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        campoCodigoAnimal = new javax.swing.JTextField();
-        campoNomeCliente = new javax.swing.JTextField();
-        campoNomeDono = new javax.swing.JTextField();
+        txtCodigoAnimal = new javax.swing.JTextField();
+        txtNomeCliente = new javax.swing.JTextField();
+        txtNomeDonoAnimal = new javax.swing.JTextField();
         itemRaça = new javax.swing.JComboBox<>();
         jLabel6 = new javax.swing.JLabel();
         itemSexo = new javax.swing.JComboBox<>();
         jLabel7 = new javax.swing.JLabel();
-        campoNascimento = new javax.swing.JTextField();
+        txtNascimentoAnimal = new javax.swing.JTextField();
         bt_pesquisarCadastro = new javax.swing.JButton();
         bt_SalvaAnimal = new javax.swing.JButton();
 
@@ -64,15 +64,15 @@ public class TelaCadastroAnimal extends javax.swing.JFrame {
 
         jLabel5.setText("Raça:");
 
-        campoNomeCliente.addActionListener(new java.awt.event.ActionListener() {
+        txtNomeCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                campoNomeClienteActionPerformed(evt);
+                txtNomeClienteActionPerformed(evt);
             }
         });
 
-        campoNomeDono.addActionListener(new java.awt.event.ActionListener() {
+        txtNomeDonoAnimal.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                campoNomeDonoActionPerformed(evt);
+                txtNomeDonoAnimalActionPerformed(evt);
             }
         });
 
@@ -98,9 +98,9 @@ public class TelaCadastroAnimal extends javax.swing.JFrame {
 
         jLabel7.setText("Nascimento:");
 
-        campoNascimento.addActionListener(new java.awt.event.ActionListener() {
+        txtNascimentoAnimal.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                campoNascimentoActionPerformed(evt);
+                txtNascimentoAnimalActionPerformed(evt);
             }
         });
 
@@ -129,16 +129,16 @@ public class TelaCadastroAnimal extends javax.swing.JFrame {
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel3)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(campoNomeCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 419, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(txtNomeCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 419, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel1)
                                 .addGap(26, 26, 26)
-                                .addComponent(campoCodigoAnimal, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addComponent(txtCodigoAnimal, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(jPanel1Layout.createSequentialGroup()
                             .addComponent(jLabel7)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(campoNascimento, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(txtNascimentoAnimal, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGroup(jPanel1Layout.createSequentialGroup()
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(jLabel4)
@@ -151,7 +151,7 @@ public class TelaCadastroAnimal extends javax.swing.JFrame {
                                     .addComponent(jLabel6)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                     .addComponent(itemSexo, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addComponent(campoNomeDono, javax.swing.GroupLayout.PREFERRED_SIZE, 375, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(txtNomeDonoAnimal, javax.swing.GroupLayout.PREFERRED_SIZE, 375, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                             .addComponent(bt_pesquisarCadastro, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(36, Short.MAX_VALUE))
@@ -172,17 +172,17 @@ public class TelaCadastroAnimal extends javax.swing.JFrame {
                 .addGap(38, 38, 38)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
-                    .addComponent(campoCodigoAnimal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtCodigoAnimal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
-                    .addComponent(campoNomeCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtNomeCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(21, 21, 21)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel4)
-                            .addComponent(campoNomeDono, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(txtNomeDonoAnimal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(bt_pesquisarCadastro)))
@@ -195,7 +195,7 @@ public class TelaCadastroAnimal extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7)
-                    .addComponent(campoNascimento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtNascimentoAnimal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(bt_SalvaAnimal)
                 .addGap(22, 22, 22))
@@ -216,13 +216,13 @@ public class TelaCadastroAnimal extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void campoNomeClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoNomeClienteActionPerformed
+    private void txtNomeClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNomeClienteActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_campoNomeClienteActionPerformed
+    }//GEN-LAST:event_txtNomeClienteActionPerformed
 
-    private void campoNomeDonoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoNomeDonoActionPerformed
+    private void txtNomeDonoAnimalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNomeDonoAnimalActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_campoNomeDonoActionPerformed
+    }//GEN-LAST:event_txtNomeDonoAnimalActionPerformed
 
     private void itemRaçaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemRaçaActionPerformed
         // TODO add your handling code here:
@@ -232,9 +232,9 @@ public class TelaCadastroAnimal extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_itemSexoActionPerformed
 
-    private void campoNascimentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoNascimentoActionPerformed
+    private void txtNascimentoAnimalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNascimentoAnimalActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_campoNascimentoActionPerformed
+    }//GEN-LAST:event_txtNascimentoAnimalActionPerformed
 
     private void bt_pesquisarCadastroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_pesquisarCadastroActionPerformed
         // TODO add your handling code here:
@@ -278,10 +278,6 @@ public class TelaCadastroAnimal extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton bt_SalvaAnimal;
     private javax.swing.JButton bt_pesquisarCadastro;
-    private javax.swing.JTextField campoCodigoAnimal;
-    private javax.swing.JTextField campoNascimento;
-    private javax.swing.JTextField campoNomeCliente;
-    private javax.swing.JTextField campoNomeDono;
     private javax.swing.JComboBox<String> itemRaça;
     private javax.swing.JComboBox<String> itemSexo;
     private javax.swing.JLabel jLabel1;
@@ -292,5 +288,9 @@ public class TelaCadastroAnimal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JTextField txtCodigoAnimal;
+    private javax.swing.JTextField txtNascimentoAnimal;
+    private javax.swing.JTextField txtNomeCliente;
+    private javax.swing.JTextField txtNomeDonoAnimal;
     // End of variables declaration//GEN-END:variables
 }

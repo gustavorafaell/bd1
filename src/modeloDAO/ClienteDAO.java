@@ -22,7 +22,7 @@ public class ClienteDAO {
     
     public void inserir(Cliente c){
         
-        Connection con = ConexaoBD.getConexao();
+        Connection con = ConexaoBD.getConexao(); // abre a conexão do banco de dados
         PreparedStatement stmt = null;
         
         try {
