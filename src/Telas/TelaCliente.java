@@ -185,7 +185,7 @@ public class TelaCliente extends javax.swing.JFrame {
         jLabel7.setText("ESTADO");
 
         btn_salvarCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/telaPrincipal/imagens/salvar.png"))); // NOI18N
-        btn_salvarCliente.setText("Salvar");
+        btn_salvarCliente.setText("Cadastrar");
         btn_salvarCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_salvarClienteActionPerformed(evt);
