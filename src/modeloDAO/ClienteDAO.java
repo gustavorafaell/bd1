@@ -108,9 +108,7 @@ public class ClienteDAO {
                      
             stmt.executeUpdate();
             
-            JOptionPane.showMessageDialog(null, "Cliente Atualizado");
-            
-            
+            JOptionPane.showMessageDialog(null, "Cliente Atualizado");    
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, "Erro ao Atualizar: "+ex);            
         } finally {
@@ -119,7 +117,7 @@ public class ClienteDAO {
         
     }
         
-        public void escluir(Cliente c){
+        public void excluir(Cliente c){
         
         Connection con = ConexaoBD.getConexao(); // abre a conexão do banco de dados
         PreparedStatement stmt = null;
