@@ -5,6 +5,13 @@
  */
 package Telas;
 
+import javax.swing.JFrame;
+import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableRowSorter;
+import modelo.Cliente;
+import modeloDAO.ClienteDAO;
+
+
 /**
  *
  * @author gustavo
@@ -15,7 +22,41 @@ public class TelaPesquisaCliente extends javax.swing.JFrame {
      * Creates new form TelaPesquisaCliente
      */
     public TelaPesquisaCliente() {
-        initComponents();
+        initComponents();  
+        DefaultTableModel modelo = (DefaultTableModel) tabelaPesquisa.getModel();
+        tabelaPesquisa.setRowSorter(new TableRowSorter(modelo));
+        
+        
+        
+        listarTabela();
+        
+    }
+    
+    TelaCadastroCliente jtabela = new TelaCadastroCliente();    
+    
+    
+    public void listarTabela(){
+        DefaultTableModel modelo = (DefaultTableModel) tabelaPesquisa.getModel();
+        
+        ClienteDAO cdao = new ClienteDAO();
+        
+        cdao.listar().forEach((c) -> {
+            modelo.addRow(new Object[]{
+                c.getId(),
+                c.getCpf(),
+                c.getNome(),
+                c.getTelefone(),
+                c.getEndereco(),
+                c.getCidade(),
+                c.getEstado()
+                    
+            });
+        });
+        
+    
+    
+    
+    
     }
 
     /**
@@ -36,11 +77,11 @@ public class TelaPesquisaCliente extends javax.swing.JFrame {
         jTextField2 = new javax.swing.JTextField();
         jButton2 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        TABELAPESQUISA = new javax.swing.JTable();
+        tabelaPesquisa = new javax.swing.JTable();
         jLabel4 = new javax.swing.JLabel();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
+        btn_pesquisaCadastrarCliente = new javax.swing.JButton();
+        btn_editarCliente = new javax.swing.JButton();
+        btn_exluirCliente = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -62,15 +103,12 @@ public class TelaPesquisaCliente extends javax.swing.JFrame {
 
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/telaPrincipal/imagens/pesquisa.png"))); // NOI18N
 
-        TABELAPESQUISA.setModel(new javax.swing.table.DefaultTableModel(
+        tabelaPesquisa.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null}
+
             },
             new String [] {
-                "ID", "NOME", "CPF", "TELEFONE", "ENDEREÇO", "CIDADE", "ESTADO"
+                "ID", "CPF", "NOME", "TELEFONE", "ENDEREÇO", "CIDADE", "ESTADO"
             }
         ) {
             Class[] types = new Class [] {
@@ -88,36 +126,51 @@ public class TelaPesquisaCliente extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane1.setViewportView(TABELAPESQUISA);
-        if (TABELAPESQUISA.getColumnModel().getColumnCount() > 0) {
-            TABELAPESQUISA.getColumnModel().getColumn(0).setResizable(false);
-            TABELAPESQUISA.getColumnModel().getColumn(1).setResizable(false);
-            TABELAPESQUISA.getColumnModel().getColumn(2).setResizable(false);
-            TABELAPESQUISA.getColumnModel().getColumn(3).setResizable(false);
-            TABELAPESQUISA.getColumnModel().getColumn(4).setResizable(false);
-            TABELAPESQUISA.getColumnModel().getColumn(5).setResizable(false);
-            TABELAPESQUISA.getColumnModel().getColumn(6).setResizable(false);
+        tabelaPesquisa.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tabelaPesquisaMouseClicked(evt);
+            }
+        });
+        jScrollPane1.setViewportView(tabelaPesquisa);
+        if (tabelaPesquisa.getColumnModel().getColumnCount() > 0) {
+            tabelaPesquisa.getColumnModel().getColumn(0).setResizable(false);
+            tabelaPesquisa.getColumnModel().getColumn(1).setResizable(false);
+            tabelaPesquisa.getColumnModel().getColumn(2).setResizable(false);
+            tabelaPesquisa.getColumnModel().getColumn(3).setResizable(false);
+            tabelaPesquisa.getColumnModel().getColumn(4).setResizable(false);
+            tabelaPesquisa.getColumnModel().getColumn(5).setResizable(false);
+            tabelaPesquisa.getColumnModel().getColumn(6).setResizable(false);
         }
 
         jLabel4.setText("CLIENTES CONSULTADOS");
 
-        jButton3.setFont(new java.awt.Font("Noto Sans", 1, 12)); // NOI18N
-        jButton3.setText("CADASTRAR");
-
-        jButton4.setFont(new java.awt.Font("Noto Sans", 1, 12)); // NOI18N
-        jButton4.setText("EDITAR");
-        jButton4.setMaximumSize(new java.awt.Dimension(83, 31));
-        jButton4.setMinimumSize(new java.awt.Dimension(83, 31));
-        jButton4.setPreferredSize(new java.awt.Dimension(83, 31));
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        btn_pesquisaCadastrarCliente.setFont(new java.awt.Font("Noto Sans", 1, 12)); // NOI18N
+        btn_pesquisaCadastrarCliente.setText("CADASTRAR");
+        btn_pesquisaCadastrarCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                btn_pesquisaCadastrarClienteActionPerformed(evt);
             }
         });
 
-        jButton5.setBackground(new java.awt.Color(226, 74, 74));
-        jButton5.setFont(new java.awt.Font("Noto Sans", 1, 12)); // NOI18N
-        jButton5.setText("EXCLUIR");
+        btn_editarCliente.setFont(new java.awt.Font("Noto Sans", 1, 12)); // NOI18N
+        btn_editarCliente.setText("EDITAR");
+        btn_editarCliente.setMaximumSize(new java.awt.Dimension(83, 31));
+        btn_editarCliente.setMinimumSize(new java.awt.Dimension(83, 31));
+        btn_editarCliente.setPreferredSize(new java.awt.Dimension(83, 31));
+        btn_editarCliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_editarClienteActionPerformed(evt);
+            }
+        });
+
+        btn_exluirCliente.setBackground(new java.awt.Color(226, 74, 74));
+        btn_exluirCliente.setFont(new java.awt.Font("Noto Sans", 1, 12)); // NOI18N
+        btn_exluirCliente.setText("EXCLUIR");
+        btn_exluirCliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_exluirClienteActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -147,11 +200,11 @@ public class TelaPesquisaCliente extends javax.swing.JFrame {
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(jButton3)
+                                        .addComponent(btn_pesquisaCadastrarCliente)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(btn_editarCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(jButton5))
+                                        .addComponent(btn_exluirCliente))
                                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addComponent(jLabel4)
                                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 656, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -183,9 +236,9 @@ public class TelaPesquisaCliente extends javax.swing.JFrame {
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton3)
-                    .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton5))
+                    .addComponent(btn_pesquisaCadastrarCliente)
+                    .addComponent(btn_editarCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_exluirCliente))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -205,11 +258,83 @@ public class TelaPesquisaCliente extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+    private void btn_editarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_editarClienteActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton4ActionPerformed
+       TelaAtualizarCliente tela = new TelaAtualizarCliente();
+       tela.setVisible(true);
+        
+        
+    }//GEN-LAST:event_btn_editarClienteActionPerformed
+
+    private void tabelaPesquisaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tabelaPesquisaMouseClicked
+        // TODO add your handling code here:
+        
+        /*int index = tabelaPesquisa.getSelectedRow();
+        DefaultTableModel modelo = (DefaultTableModel) tabelaPesquisa.getModel();
+        
+        String id = modelo.getValueAt(index,0).toString();
+        String cpf = modelo.getValueAt(index,1).toString();
+        String nome = modelo.getValueAt(index,2).toString();
+        String telefone = modelo.getValueAt(index,3).toString();
+        String endereco = modelo.getValueAt(index,4).toString();
+        String cidade = modelo.getValueAt(index,5).toString();
+        String estado = modelo.getValueAt(index,6).toString();
+        
+        jtabela.setVisible(true);
+        jtabela.pack();
+        jtabela.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        
+        jtabela.idCliente.setText(id);
+        jtabela.txtCpfcliente.setText(cpf);
+        jtabela.txtNomeCliente.setText(nome);
+        jtabela.txtTelefoneCliente.setText(telefone);
+        jtabela.txtEnderecoCliente.setText(endereco);
+        jtabela.txtCidadeCliente.setText(cidade);
+        jtabela.txtEstadoCliente.setSelectedItem(estado); */
+        
+        
+        
+        
+        
+        
+        
+               
+        
+        
+        
+        
+             
+        
+    }//GEN-LAST:event_tabelaPesquisaMouseClicked
+
+    private void btn_pesquisaCadastrarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_pesquisaCadastrarClienteActionPerformed
+        // TODO add your handling code here:
+        
+        TelaCadastroCliente tela = new TelaCadastroCliente();
+        tela.setVisible(true);
+        
+        
+        
+    }//GEN-LAST:event_btn_pesquisaCadastrarClienteActionPerformed
+
+    private void btn_exluirClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_exluirClienteActionPerformed
+        // TODO add your handling code here:
+        
+        if (tabelaPesquisa.getSelectedRow() != -1){
+            
+            
+            
+        
+        
+        
+        
+        }
+        
+        
+    }//GEN-LAST:event_btn_exluirClienteActionPerformed
 
     /**
      * @param args the command line arguments
@@ -247,12 +372,11 @@ public class TelaPesquisaCliente extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTable TABELAPESQUISA;
+    private javax.swing.JButton btn_editarCliente;
+    private javax.swing.JButton btn_exluirCliente;
+    private javax.swing.JButton btn_pesquisaCadastrarCliente;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -261,5 +385,6 @@ public class TelaPesquisaCliente extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
+    private javax.swing.JTable tabelaPesquisa;
     // End of variables declaration//GEN-END:variables
 }
