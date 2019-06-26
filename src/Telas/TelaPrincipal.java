@@ -30,9 +30,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private void initComponents() {
 
         PainelBotao = new javax.swing.JPanel();
-        bt_Cadastro = new javax.swing.JButton();
         bt_Vendas = new javax.swing.JButton();
-        bt_Pesquisar = new javax.swing.JButton();
         bt_CadastroExtra = new javax.swing.JButton();
         CardPrincipal = new javax.swing.JPanel();
         Card1 = new javax.swing.JPanel();
@@ -56,21 +54,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
         PainelBotao.setBackground(new java.awt.Color(36, 47, 65));
         PainelBotao.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        bt_Cadastro.setBackground(new java.awt.Color(97, 212, 195));
-        bt_Cadastro.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        bt_Cadastro.setForeground(new java.awt.Color(36, 47, 65));
-        bt_Cadastro.setText("Cadastro");
-        bt_Cadastro.setBorderPainted(false);
-        bt_Cadastro.setDefaultCapable(false);
-        bt_Cadastro.setFocusPainted(false);
-        bt_Cadastro.setPreferredSize(new java.awt.Dimension(170, 40));
-        bt_Cadastro.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bt_CadastroActionPerformed(evt);
-            }
-        });
-        PainelBotao.add(bt_Cadastro, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 130, 190, -1));
-
         bt_Vendas.setBackground(new java.awt.Color(97, 212, 195));
         bt_Vendas.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         bt_Vendas.setForeground(new java.awt.Color(36, 47, 65));
@@ -85,23 +68,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
                 bt_VendasActionPerformed(evt);
             }
         });
-        PainelBotao.add(bt_Vendas, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 280, 190, -1));
-
-        bt_Pesquisar.setBackground(new java.awt.Color(97, 212, 195));
-        bt_Pesquisar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        bt_Pesquisar.setForeground(new java.awt.Color(36, 47, 65));
-        bt_Pesquisar.setText("Pesquisar/Editar");
-        bt_Pesquisar.setBorder(null);
-        bt_Pesquisar.setBorderPainted(false);
-        bt_Pesquisar.setFocusPainted(false);
-        bt_Pesquisar.setFocusable(false);
-        bt_Pesquisar.setPreferredSize(new java.awt.Dimension(170, 40));
-        bt_Pesquisar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bt_PesquisarActionPerformed(evt);
-            }
-        });
-        PainelBotao.add(bt_Pesquisar, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 180, 190, -1));
+        PainelBotao.add(bt_Vendas, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 210, 190, -1));
 
         bt_CadastroExtra.setBackground(new java.awt.Color(97, 212, 195));
         bt_CadastroExtra.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -117,7 +84,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
                 bt_CadastroExtraActionPerformed(evt);
             }
         });
-        PainelBotao.add(bt_CadastroExtra, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 230, 190, -1));
+        PainelBotao.add(bt_CadastroExtra, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 150, 190, -1));
 
         CardPrincipal.setEnabled(false);
         CardPrincipal.setLayout(new java.awt.CardLayout());
@@ -320,19 +287,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void bt_CadastroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_CadastroActionPerformed
-        // TODO add your handling code here:
-        //CardLayout cl = (CardLayout) CardPrincipal.getLayout();
-        //cl.show(CardPrincipal, "tela1");
-        
-        CardPrincipal.removeAll();
-        CardPrincipal.add(Card1);
-        CardPrincipal.repaint();
-        CardPrincipal.revalidate();
-              
-        
-    }//GEN-LAST:event_bt_CadastroActionPerformed
-
     private void bt_VendasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_VendasActionPerformed
         // TODO add your handling code here:
         //CardLayout cl = (CardLayout) CardPrincipal.getLayout();
@@ -340,16 +294,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
         
         
     }//GEN-LAST:event_bt_VendasActionPerformed
-
-    private void bt_PesquisarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_PesquisarActionPerformed
-        // TODO add your handling code here:
-        
-        CardPrincipal.removeAll();
-        CardPrincipal.add(Card2);
-        CardPrincipal.repaint();
-        CardPrincipal.revalidate();
-        
-    }//GEN-LAST:event_bt_PesquisarActionPerformed
 
     private void bt_CadastroExtraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_CadastroExtraActionPerformed
         // TODO add your handling code here:
@@ -392,9 +336,9 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private void bt_buscarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_buscarClienteActionPerformed
         // TODO add your handling code here:
         
-        TelaPesquisaCliente tela = new TelaPesquisaCliente();
-        tela.setVisible(true);
-        
+//        TelaPesquisaCliente tela = new TelaPesquisaCliente();
+//        tela.setVisible(true);
+//        
         
     }//GEN-LAST:event_bt_buscarClienteActionPerformed
 
@@ -442,9 +386,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JButton bt_Cad_Animal;
     private javax.swing.JButton bt_Cad_Cliente;
     private javax.swing.JButton bt_Cad_Produto;
-    private javax.swing.JButton bt_Cadastro;
     private javax.swing.JButton bt_CadastroExtra;
-    private javax.swing.JButton bt_Pesquisar;
     private javax.swing.JButton bt_Vendas;
     private javax.swing.JButton bt_buscarAnimal;
     private javax.swing.JButton bt_buscarCliente;

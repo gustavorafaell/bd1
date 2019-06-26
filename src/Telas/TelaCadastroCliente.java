@@ -5,6 +5,8 @@
  */
 package Telas;
 
+import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableRowSorter;
 import modelo.Cliente;
 import modeloDAO.ClienteDAO;
 
@@ -20,7 +22,36 @@ public class TelaCadastroCliente extends javax.swing.JFrame {
      */
     public TelaCadastroCliente() {
         initComponents();
+        
+        DefaultTableModel modelo = (DefaultTableModel) tabelaCliente.getModel();
+        tabelaCliente.setRowSorter(new TableRowSorter(modelo));
+        
+        
+        
+        listarTabela();
     }
+    
+    public void listarTabela(){
+        DefaultTableModel modelo = (DefaultTableModel) tabelaCliente.getModel();
+        modelo.setNumRows(0);
+        
+        ClienteDAO cdao = new ClienteDAO();
+        
+        cdao.listar().forEach((c) -> {
+            modelo.addRow(new Object[]{
+                c.getId(),
+                c.getCpf(),
+                c.getNome(),
+                c.getTelefone(),
+                c.getEndereco(),
+                c.getCidade(),
+                c.getEstado()
+                    
+            });
+        });
+    
+    }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -52,9 +83,9 @@ public class TelaCadastroCliente extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
-        btn_salvarCliente1 = new javax.swing.JButton();
-        btn_salvarCliente2 = new javax.swing.JButton();
+        tabelaCliente = new javax.swing.JTable();
+        btn_excluirSalvar = new javax.swing.JButton();
+        btn_editarCliente = new javax.swing.JButton();
 
         javax.swing.GroupLayout jFrame1Layout = new javax.swing.GroupLayout(jFrame1.getContentPane());
         jFrame1.getContentPane().setLayout(jFrame1Layout);
@@ -135,7 +166,7 @@ public class TelaCadastroCliente extends javax.swing.JFrame {
         jLabel7.setText("ESTADO");
 
         btn_salvarCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/telaPrincipal/imagens/salvar.png"))); // NOI18N
-        btn_salvarCliente.setText("Editar");
+        btn_salvarCliente.setText("Salvar");
         btn_salvarCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_salvarClienteActionPerformed(evt);
@@ -158,7 +189,7 @@ public class TelaCadastroCliente extends javax.swing.JFrame {
 
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/telaPrincipal/imagens/pesquisa.png"))); // NOI18N
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tabelaCliente.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -174,31 +205,31 @@ public class TelaCadastroCliente extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane1.setViewportView(jTable1);
-        if (jTable1.getColumnModel().getColumnCount() > 0) {
-            jTable1.getColumnModel().getColumn(0).setResizable(false);
-            jTable1.getColumnModel().getColumn(1).setResizable(false);
-            jTable1.getColumnModel().getColumn(2).setResizable(false);
-            jTable1.getColumnModel().getColumn(3).setResizable(false);
-            jTable1.getColumnModel().getColumn(4).setResizable(false);
-            jTable1.getColumnModel().getColumn(6).setResizable(false);
+        jScrollPane1.setViewportView(tabelaCliente);
+        if (tabelaCliente.getColumnModel().getColumnCount() > 0) {
+            tabelaCliente.getColumnModel().getColumn(0).setResizable(false);
+            tabelaCliente.getColumnModel().getColumn(1).setResizable(false);
+            tabelaCliente.getColumnModel().getColumn(2).setResizable(false);
+            tabelaCliente.getColumnModel().getColumn(3).setResizable(false);
+            tabelaCliente.getColumnModel().getColumn(4).setResizable(false);
+            tabelaCliente.getColumnModel().getColumn(6).setResizable(false);
         }
 
-        btn_salvarCliente1.setBackground(new java.awt.Color(215, 52, 52));
-        btn_salvarCliente1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/telaPrincipal/imagens/salvar.png"))); // NOI18N
-        btn_salvarCliente1.setText("Excluir");
-        btn_salvarCliente1.setToolTipText("");
-        btn_salvarCliente1.addActionListener(new java.awt.event.ActionListener() {
+        btn_excluirSalvar.setBackground(new java.awt.Color(215, 52, 52));
+        btn_excluirSalvar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/telaPrincipal/imagens/salvar.png"))); // NOI18N
+        btn_excluirSalvar.setText("Excluir");
+        btn_excluirSalvar.setToolTipText("");
+        btn_excluirSalvar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_salvarCliente1ActionPerformed(evt);
+                btn_excluirSalvarActionPerformed(evt);
             }
         });
 
-        btn_salvarCliente2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/telaPrincipal/imagens/salvar.png"))); // NOI18N
-        btn_salvarCliente2.setText("Salvar");
-        btn_salvarCliente2.addActionListener(new java.awt.event.ActionListener() {
+        btn_editarCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/telaPrincipal/imagens/salvar.png"))); // NOI18N
+        btn_editarCliente.setText("Editar");
+        btn_editarCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_salvarCliente2ActionPerformed(evt);
+                btn_editarClienteActionPerformed(evt);
             }
         });
 
@@ -252,11 +283,11 @@ public class TelaCadastroCliente extends javax.swing.JFrame {
                         .addContainerGap())
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(btn_salvarCliente2)
-                        .addGap(18, 18, 18)
                         .addComponent(btn_salvarCliente)
                         .addGap(18, 18, 18)
-                        .addComponent(btn_salvarCliente1)
+                        .addComponent(btn_editarCliente)
+                        .addGap(18, 18, 18)
+                        .addComponent(btn_excluirSalvar)
                         .addGap(59, 59, 59))))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(441, 441, 441)
@@ -305,8 +336,8 @@ public class TelaCadastroCliente extends javax.swing.JFrame {
                 .addGap(42, 42, 42)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btn_salvarCliente)
-                    .addComponent(btn_salvarCliente1)
-                    .addComponent(btn_salvarCliente2))
+                    .addComponent(btn_excluirSalvar)
+                    .addComponent(btn_editarCliente))
                 .addGap(195, 195, 195))
         );
 
@@ -363,8 +394,7 @@ public class TelaCadastroCliente extends javax.swing.JFrame {
         dao.inserir(c);
         
         listarTabela();
-        
-        
+              
         
         
         
@@ -374,13 +404,19 @@ public class TelaCadastroCliente extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtTelefoneClienteActionPerformed
 
-    private void btn_salvarCliente1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_salvarCliente1ActionPerformed
+    private void btn_excluirSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_excluirSalvarActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btn_salvarCliente1ActionPerformed
+        
+        
+    }//GEN-LAST:event_btn_excluirSalvarActionPerformed
 
-    private void btn_salvarCliente2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_salvarCliente2ActionPerformed
+    private void btn_editarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_editarClienteActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btn_salvarCliente2ActionPerformed
+        
+        
+        
+        
+    }//GEN-LAST:event_btn_editarClienteActionPerformed
 
     /**
      * @param args the command line arguments
@@ -418,9 +454,9 @@ public class TelaCadastroCliente extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btn_editarCliente;
+    private javax.swing.JButton btn_excluirSalvar;
     private javax.swing.JButton btn_salvarCliente;
-    private javax.swing.JButton btn_salvarCliente1;
-    private javax.swing.JButton btn_salvarCliente2;
     public javax.swing.JTextField idCliente;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
@@ -435,7 +471,7 @@ public class TelaCadastroCliente extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JTable tabelaCliente;
     public javax.swing.JTextField txtCidadeCliente;
     public javax.swing.JTextField txtCpfcliente;
     public javax.swing.JTextField txtEnderecoCliente;
@@ -444,7 +480,7 @@ public class TelaCadastroCliente extends javax.swing.JFrame {
     public javax.swing.JTextField txtTelefoneCliente;
     // End of variables declaration//GEN-END:variables
 
-    private void listarTabela() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    //private void listarTabela() {
+      //  throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+   // }
 }
