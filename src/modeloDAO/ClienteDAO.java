@@ -90,6 +90,47 @@ public class ClienteDAO {
         return clientes;
     
     }
+    public List<Cliente> listarPorNome(String name){
+        Connection con = ConexaoBD.getConexao(); // abre a conexão do banco de dados
+        PreparedStatement stmt = null;
+        
+        ResultSet rs = null;
+        
+        List<Cliente> clientes = new ArrayList<>(); //Lista para receber cliente
+        
+        try {
+            stmt = con.prepareStatement("SELECT *FROM cliente WHERE nome LIKE ?");
+            stmt.setString(1,"%"+name+"%");
+            rs = stmt.executeQuery();
+            
+            while (rs.next()){
+                Cliente cliente = new Cliente();
+                
+                cliente.setId(rs.getInt("id"));
+                cliente.setCpf(rs.getString("cpf"));
+                cliente.setNome(rs.getString("nome"));
+                cliente.setTelefone(rs.getString("telefone"));
+                cliente.setEndereco(rs.getString("endereco"));
+                cliente.setCidade(rs.getString("cidade"));
+                cliente.setEstado(rs.getString("estado"));
+                
+                clientes.add(cliente);  //adiciona os dados dentro da lista clientes        
+                       
+            }
+            
+            
+                    
+        } catch (SQLException ex) {
+            Logger.getLogger(ClienteDAO.class.getName()).log(Level.SEVERE, null, ex);
+            
+        } finally {
+            ConexaoBD.fechaConexao(con, stmt, rs);
+        
+        }
+        
+        return clientes;
+    
+    }
     
     public void atualizar(Cliente c){
         
