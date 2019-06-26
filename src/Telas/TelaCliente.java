@@ -15,12 +15,12 @@ import modeloDAO.ClienteDAO;
  *
  * @author gustavo
  */
-public class TelaCadastroCliente extends javax.swing.JFrame {
+public class TelaCliente extends javax.swing.JFrame {
 
     /**
      * Creates new form TelaCadastroCliente
      */
-    public TelaCadastroCliente() {
+    public TelaCliente() {
         initComponents();
         
         DefaultTableModel modelo = (DefaultTableModel) tabelaCliente.getModel();
@@ -127,7 +127,7 @@ public class TelaCadastroCliente extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("TakaoPGothic", 1, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(52, 43, 43));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("CADASTRO CLIENTE");
+        jLabel1.setText("CLIENTE");
 
         jLabel2.setFont(new java.awt.Font("Noto Sans", 1, 12)); // NOI18N
         jLabel2.setText("ID");
@@ -216,15 +216,25 @@ public class TelaCadastroCliente extends javax.swing.JFrame {
 
             },
             new String [] {
-                "ID", "NOME", "CPF", "ENDERECO", "CIDADE", "ESTADO", "TELEFONE"
+                "ID", "CPF", "NOME", "TELEFONE", "ENDERECO", "CIDADE", "ESTADO"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, true, false, false
+                false, false, false, false, false, true, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
                 return canEdit [columnIndex];
+            }
+        });
+        tabelaCliente.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tabelaClienteMouseClicked(evt);
+            }
+        });
+        tabelaCliente.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                tabelaClienteKeyReleased(evt);
             }
         });
         jScrollPane1.setViewportView(tabelaCliente);
@@ -234,7 +244,7 @@ public class TelaCadastroCliente extends javax.swing.JFrame {
             tabelaCliente.getColumnModel().getColumn(2).setResizable(false);
             tabelaCliente.getColumnModel().getColumn(3).setResizable(false);
             tabelaCliente.getColumnModel().getColumn(4).setResizable(false);
-            tabelaCliente.getColumnModel().getColumn(6).setResizable(false);
+            tabelaCliente.getColumnModel().getColumn(5).setResizable(false);
         }
 
         btn_excluirSalvar.setBackground(new java.awt.Color(215, 52, 52));
@@ -248,7 +258,7 @@ public class TelaCadastroCliente extends javax.swing.JFrame {
         });
 
         btn_editarCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/telaPrincipal/imagens/salvar.png"))); // NOI18N
-        btn_editarCliente.setText("Editar");
+        btn_editarCliente.setText("Atualizar");
         btn_editarCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_editarClienteActionPerformed(evt);
@@ -454,6 +464,25 @@ public class TelaCadastroCliente extends javax.swing.JFrame {
     private void btn_editarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_editarClienteActionPerformed
         // TODO add your handling code here:
         
+        if(tabelaCliente.getSelectedRow() != -1){
+            Cliente c = new Cliente();
+            ClienteDAO dao = new ClienteDAO();   
+
+            c.setCpf(txtCpfcliente.getText());
+            c.setNome(txtNomeCliente.getText());
+            c.setTelefone(txtTelefoneCliente.getText());
+            c.setEndereco(txtEnderecoCliente.getText());
+            c.setCidade(txtCidadeCliente.getText());
+            c.setEstado((String) txtEstadoCliente.getSelectedItem());
+            c.setId((int)tabelaCliente.getValueAt(tabelaCliente.getSelectedRow(), 0));
+
+            dao.atualizar(c);
+
+            listarTabela();
+            
+        
+        }
+        
         
         
         
@@ -463,6 +492,40 @@ public class TelaCadastroCliente extends javax.swing.JFrame {
         // TODO add your handling code here:
         listarTabelaPorNome(txtNomeCliente.getText());
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void tabelaClienteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tabelaClienteMouseClicked
+        // TODO add your handling code here:
+        
+        if(tabelaCliente.getSelectedRow() != -1){
+            
+            idCliente.setText(tabelaCliente.getValueAt(tabelaCliente.getSelectedRow(), 0).toString());
+            txtCpfcliente.setText(tabelaCliente.getValueAt(tabelaCliente.getSelectedRow(), 1).toString());
+            txtNomeCliente.setText(tabelaCliente.getValueAt(tabelaCliente.getSelectedRow(), 2).toString());
+            txtTelefoneCliente.setText(tabelaCliente.getValueAt(tabelaCliente.getSelectedRow(), 3).toString());
+            txtEnderecoCliente.setText(tabelaCliente.getValueAt(tabelaCliente.getSelectedRow(), 4).toString());
+            txtCidadeCliente.setText(tabelaCliente.getValueAt(tabelaCliente.getSelectedRow(), 5).toString());
+            //txtEstadoCliente.getSelectedItem((tabelaCliente.getValueAt(tabelaCliente.getSelectedRow(), 0x4).toString());
+        
+        }
+        
+    }//GEN-LAST:event_tabelaClienteMouseClicked
+
+    private void tabelaClienteKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tabelaClienteKeyReleased
+        // TODO add your handling code here:
+        
+        if(tabelaCliente.getSelectedRow() != -1){
+            
+            idCliente.setText(tabelaCliente.getValueAt(tabelaCliente.getSelectedRow(), 0).toString());
+            txtCpfcliente.setText(tabelaCliente.getValueAt(tabelaCliente.getSelectedRow(), 1).toString());
+            txtNomeCliente.setText(tabelaCliente.getValueAt(tabelaCliente.getSelectedRow(), 2).toString());
+            txtTelefoneCliente.setText(tabelaCliente.getValueAt(tabelaCliente.getSelectedRow(), 3).toString());
+            txtEnderecoCliente.setText(tabelaCliente.getValueAt(tabelaCliente.getSelectedRow(), 4).toString());
+            txtCidadeCliente.setText(tabelaCliente.getValueAt(tabelaCliente.getSelectedRow(), 5).toString());
+            //txtEstadoCliente.getSelectedItem((tabelaCliente.getValueAt(tabelaCliente.getSelectedRow(), 0x4).toString());
+        
+        }
+        
+    }//GEN-LAST:event_tabelaClienteKeyReleased
 
     /**
      * @param args the command line arguments
@@ -481,20 +544,21 @@ public class TelaCadastroCliente extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(TelaCadastroCliente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaCliente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(TelaCadastroCliente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaCliente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(TelaCadastroCliente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaCliente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(TelaCadastroCliente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaCliente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new TelaCadastroCliente().setVisible(true);
+                new TelaCliente().setVisible(true);
             }
         });
     }

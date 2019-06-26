@@ -311,7 +311,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
     private void bt_Cad_ClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_Cad_ClienteActionPerformed
         // TODO add your handling code here:
-        TelaCadastroCliente tela = new TelaCadastroCliente();
+        TelaCliente tela = new TelaCliente();
         tela.setVisible(true);
     }//GEN-LAST:event_bt_Cad_ClienteActionPerformed
 
