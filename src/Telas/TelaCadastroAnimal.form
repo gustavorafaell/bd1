@@ -57,6 +57,9 @@
           <Dimension value="[650, 427]"/>
         </Property>
       </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_SerializeTo" type="java.lang.String" value="TelaCadastroAnimal_jPanel1"/>
+      </AuxValues>
 
       <Layout>
         <DimensionLayout dim="0">
