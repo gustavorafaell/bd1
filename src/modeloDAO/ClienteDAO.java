@@ -91,7 +91,7 @@ public class ClienteDAO {
     
     }
     
-        public void atualizar(Cliente c){
+    public void atualizar(Cliente c){
         
         Connection con = ConexaoBD.getConexao(); // abre a conexão do banco de dados
         PreparedStatement stmt = null;

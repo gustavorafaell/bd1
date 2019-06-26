@@ -98,7 +98,7 @@ public class TelaCadastroCliente extends javax.swing.JFrame {
             .addGap(0, 300, Short.MAX_VALUE)
         );
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(153, 204, 255));
         jPanel1.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
@@ -406,6 +406,29 @@ public class TelaCadastroCliente extends javax.swing.JFrame {
 
     private void btn_excluirSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_excluirSalvarActionPerformed
         // TODO add your handling code here:
+        
+        if(tabelaCliente.getSelectedRow() != -1){
+            
+            Cliente c = new Cliente();
+            ClienteDAO dao = new ClienteDAO();
+            
+            c.setId((int) tabelaCliente.getValueAt(tabelaCliente.getSelectedRow(), 0));
+            
+                    
+            dao.excluir(c);
+            
+            txtCpfcliente.setText("");
+            txtNomeCliente.setText("");
+            txtTelefoneCliente.setText("");            
+            txtEnderecoCliente.setText("");
+            txtCidadeCliente.setText("");
+            
+            
+            listarTabela();
+            
+        
+        
+        }
         
         
     }//GEN-LAST:event_btn_excluirSalvarActionPerformed
