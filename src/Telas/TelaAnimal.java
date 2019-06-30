@@ -85,26 +85,26 @@ public class TelaAnimal extends javax.swing.JFrame {
         jFrame1 = new javax.swing.JFrame();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        txtNomeCliente = new javax.swing.JTextField();
-        jLabel3 = new javax.swing.JLabel();
-        txtCpfcliente = new javax.swing.JTextField();
-        jLabel4 = new javax.swing.JLabel();
-        idCliente = new javax.swing.JTextField();
-        jLabel5 = new javax.swing.JLabel();
-        txtEnderecoCliente = new javax.swing.JTextField();
-        jLabel6 = new javax.swing.JLabel();
-        txtCidadeCliente = new javax.swing.JTextField();
-        jLabel7 = new javax.swing.JLabel();
-        btn_salvarCliente = new javax.swing.JButton();
-        txtEstadoCliente = new javax.swing.JComboBox<>();
+        Id_Animal = new javax.swing.JLabel();
+        txtNomeAnimal = new javax.swing.JTextField();
+        NomeAminal = new javax.swing.JLabel();
+        idAnimal = new javax.swing.JTextField();
+        nascAnimal = new javax.swing.JLabel();
+        txtNasciemntoAnimal = new javax.swing.JTextField();
+        SexoAnimal = new javax.swing.JLabel();
+        CorAnimal = new javax.swing.JLabel();
+        btn_salvarAnimal = new javax.swing.JButton();
         jLabel8 = new javax.swing.JLabel();
-        txtTelefoneCliente = new javax.swing.JTextField();
+        txtCorAnimal = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         tabelaCliente = new javax.swing.JTable();
-        btn_excluirSalvar = new javax.swing.JButton();
-        btn_editarCliente = new javax.swing.JButton();
+        btn_excluirAnimal = new javax.swing.JButton();
+        btn_editarAnimal = new javax.swing.JButton();
+        BoxSexoAnimal = new javax.swing.JComboBox<>();
+        NomeDono = new javax.swing.JLabel();
+        txtDono = new javax.swing.JTextField();
+        jButton2 = new javax.swing.JButton();
 
         javax.swing.GroupLayout jFrame1Layout = new javax.swing.GroupLayout(jFrame1.getContentPane());
         jFrame1.getContentPane().setLayout(jFrame1Layout);
@@ -127,80 +127,59 @@ public class TelaAnimal extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("TakaoPGothic", 1, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(52, 43, 43));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Animal");
+        jLabel1.setText("ANIMAL");
 
-        jLabel2.setFont(new java.awt.Font("Noto Sans", 1, 12)); // NOI18N
-        jLabel2.setText("ID");
+        Id_Animal.setFont(new java.awt.Font("Noto Sans", 1, 12)); // NOI18N
+        Id_Animal.setText("ID");
 
-        txtNomeCliente.setToolTipText("");
-        txtNomeCliente.addActionListener(new java.awt.event.ActionListener() {
+        txtNomeAnimal.setToolTipText("");
+        txtNomeAnimal.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtNomeClienteActionPerformed(evt);
+                txtNomeAnimalActionPerformed(evt);
             }
         });
 
-        jLabel3.setFont(new java.awt.Font("Noto Sans", 1, 12)); // NOI18N
-        jLabel3.setText("NOME");
+        NomeAminal.setFont(new java.awt.Font("Noto Sans", 1, 12)); // NOI18N
+        NomeAminal.setText("NOME");
 
-        txtCpfcliente.setToolTipText("");
-        txtCpfcliente.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-        txtCpfcliente.addActionListener(new java.awt.event.ActionListener() {
+        idAnimal.setEditable(false);
+        idAnimal.setToolTipText("");
+        idAnimal.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtCpfclienteActionPerformed(evt);
+                idAnimalActionPerformed(evt);
             }
         });
 
-        jLabel4.setFont(new java.awt.Font("Noto Sans", 1, 12)); // NOI18N
-        jLabel4.setText("CPF");
+        nascAnimal.setFont(new java.awt.Font("Noto Sans", 1, 12)); // NOI18N
+        nascAnimal.setText("NASCIMENTO");
 
-        idCliente.setEditable(false);
-        idCliente.setToolTipText("");
-        idCliente.addActionListener(new java.awt.event.ActionListener() {
+        txtNasciemntoAnimal.setToolTipText("");
+        txtNasciemntoAnimal.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                idClienteActionPerformed(evt);
+                txtNasciemntoAnimalActionPerformed(evt);
             }
         });
 
-        jLabel5.setFont(new java.awt.Font("Noto Sans", 1, 12)); // NOI18N
-        jLabel5.setText("ENDEREÇO");
+        SexoAnimal.setFont(new java.awt.Font("Noto Sans", 1, 12)); // NOI18N
+        SexoAnimal.setText("SEXO");
 
-        txtEnderecoCliente.setToolTipText("");
-        txtEnderecoCliente.addActionListener(new java.awt.event.ActionListener() {
+        CorAnimal.setFont(new java.awt.Font("Noto Sans", 1, 12)); // NOI18N
+        CorAnimal.setText("COR");
+
+        btn_salvarAnimal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/telaPrincipal/imagens/salvar.png"))); // NOI18N
+        btn_salvarAnimal.setText("Cadastrar");
+        btn_salvarAnimal.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtEnderecoClienteActionPerformed(evt);
+                btn_salvarAnimalActionPerformed(evt);
             }
         });
-
-        jLabel6.setFont(new java.awt.Font("Noto Sans", 1, 12)); // NOI18N
-        jLabel6.setText("CIDADE");
-
-        txtCidadeCliente.setToolTipText("");
-        txtCidadeCliente.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtCidadeClienteActionPerformed(evt);
-            }
-        });
-
-        jLabel7.setFont(new java.awt.Font("Noto Sans", 1, 12)); // NOI18N
-        jLabel7.setText("ESTADO");
-
-        btn_salvarCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/telaPrincipal/imagens/salvar.png"))); // NOI18N
-        btn_salvarCliente.setText("Cadastrar");
-        btn_salvarCliente.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_salvarClienteActionPerformed(evt);
-            }
-        });
-
-        txtEstadoCliente.setFont(new java.awt.Font("Noto Sans", 1, 12)); // NOI18N
-        txtEstadoCliente.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "----", "Acre ", "Alagoas ", "Amapá ", "Amazonas ", "Bahia ", "Ceará ", "Distrito Federal ", "Espírito Santo ", "Goiás ", "Maranhão", "Mato Grosso", "Mato Grosso do Sul ", "Minas Gerais ", "Pará ", "Paraíba ", "Paraná ", "Pernambuco ", "Piauí", "Rio de Janeiro", "Rio Grande do Norte ", "Rio Grande do Sul ", "Rondônia ", "Roraima", "Santa Catarina ", "São Paulo ", "Sergipe", "Tocantins" }));
 
         jLabel8.setFont(new java.awt.Font("Noto Sans", 1, 12)); // NOI18N
         jLabel8.setText("TELEFONE");
 
-        txtTelefoneCliente.addActionListener(new java.awt.event.ActionListener() {
+        txtCorAnimal.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtTelefoneClienteActionPerformed(evt);
+                txtCorAnimalActionPerformed(evt);
             }
         });
 
@@ -216,11 +195,11 @@ public class TelaAnimal extends javax.swing.JFrame {
 
             },
             new String [] {
-                "ID", "CPF", "NOME", "TELEFONE", "ENDERECO", "CIDADE", "ESTADO"
+                "ID", "NOME", "NASCIMENTO", "SEXO", "COR"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, true, false
+                false, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -244,24 +223,35 @@ public class TelaAnimal extends javax.swing.JFrame {
             tabelaCliente.getColumnModel().getColumn(2).setResizable(false);
             tabelaCliente.getColumnModel().getColumn(3).setResizable(false);
             tabelaCliente.getColumnModel().getColumn(4).setResizable(false);
-            tabelaCliente.getColumnModel().getColumn(5).setResizable(false);
         }
 
-        btn_excluirSalvar.setBackground(new java.awt.Color(215, 52, 52));
-        btn_excluirSalvar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/telaPrincipal/imagens/salvar.png"))); // NOI18N
-        btn_excluirSalvar.setText("Excluir");
-        btn_excluirSalvar.setToolTipText("");
-        btn_excluirSalvar.addActionListener(new java.awt.event.ActionListener() {
+        btn_excluirAnimal.setBackground(new java.awt.Color(215, 52, 52));
+        btn_excluirAnimal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/telaPrincipal/imagens/salvar.png"))); // NOI18N
+        btn_excluirAnimal.setText("Excluir");
+        btn_excluirAnimal.setToolTipText("");
+        btn_excluirAnimal.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_excluirSalvarActionPerformed(evt);
+                btn_excluirAnimalActionPerformed(evt);
             }
         });
 
-        btn_editarCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/telaPrincipal/imagens/salvar.png"))); // NOI18N
-        btn_editarCliente.setText("Atualizar");
-        btn_editarCliente.addActionListener(new java.awt.event.ActionListener() {
+        btn_editarAnimal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/telaPrincipal/imagens/salvar.png"))); // NOI18N
+        btn_editarAnimal.setText("Atualizar");
+        btn_editarAnimal.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_editarClienteActionPerformed(evt);
+                btn_editarAnimalActionPerformed(evt);
+            }
+        });
+
+        BoxSexoAnimal.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "--------", "F", "M" }));
+
+        NomeDono.setFont(new java.awt.Font("Noto Sans", 1, 12)); // NOI18N
+        NomeDono.setText("DONO");
+
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/telaPrincipal/imagens/pesquisa.png"))); // NOI18N
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
             }
         });
 
@@ -276,52 +266,57 @@ public class TelaAnimal extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel2)
-                                    .addComponent(idCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txtCpfcliente, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel4))
-                                .addGap(62, 62, 62)
+                                    .addComponent(Id_Animal)
+                                    .addComponent(idAnimal, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(42, 42, 42)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(txtNomeCliente)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(jLabel3)
-                                        .addGap(0, 0, Short.MAX_VALUE))))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txtEnderecoCliente)
-                                    .addComponent(jLabel5))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txtCidadeCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel6))
-                                .addGap(12, 12, 12)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel7)
-                                    .addComponent(txtEstadoCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txtTelefoneCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel8))
-                                .addGap(0, 0, Short.MAX_VALUE))
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING))
+                                        .addComponent(NomeAminal)
+                                        .addGap(0, 0, Short.MAX_VALUE))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                                .addGap(0, 0, Short.MAX_VALUE)
+                                                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                                .addComponent(txtNomeAnimal)
+                                                .addGap(28, 28, 28)
+                                                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                        .addGap(97, 97, 97))))
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 1090, Short.MAX_VALUE))
                         .addContainerGap())
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(btn_salvarCliente)
+                        .addComponent(btn_salvarAnimal)
                         .addGap(18, 18, 18)
-                        .addComponent(btn_editarCliente)
+                        .addComponent(btn_editarAnimal)
                         .addGap(18, 18, 18)
-                        .addComponent(btn_excluirSalvar)
-                        .addGap(59, 59, 59))))
+                        .addComponent(btn_excluirAnimal)
+                        .addGap(59, 59, 59))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel8)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(nascAnimal)
+                                    .addComponent(txtNasciemntoAnimal, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(31, 31, 31)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(SexoAnimal)
+                                    .addComponent(BoxSexoAnimal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(33, 33, 33)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(CorAnimal)
+                                    .addComponent(txtCorAnimal, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(33, 33, 33)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(NomeDono)
+                                    .addComponent(txtDono))))
+                        .addGap(175, 175, 175))))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(441, 441, 441)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 232, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 441, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -330,42 +325,39 @@ public class TelaAnimal extends javax.swing.JFrame {
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(jLabel4)
-                    .addComponent(jLabel3))
+                    .addComponent(Id_Animal)
+                    .addComponent(NomeAminal))
                 .addGap(2, 2, 2)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(txtCpfcliente, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(txtNomeCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(idCliente, javax.swing.GroupLayout.Alignment.LEADING))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(idAnimal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtNomeAnimal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel5)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txtEnderecoCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jLabel6)
-                            .addComponent(jLabel7)))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(nascAnimal)
+                            .addComponent(SexoAnimal)
+                            .addComponent(CorAnimal)
+                            .addComponent(NomeDono))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(txtNasciemntoAnimal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtCorAnimal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(BoxSexoAnimal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtDono, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txtCidadeCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtEstadoCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel8)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(txtTelefoneCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(42, 42, 42)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btn_salvarCliente)
-                    .addComponent(btn_excluirSalvar)
-                    .addComponent(btn_editarCliente))
+                    .addComponent(btn_salvarAnimal)
+                    .addComponent(btn_excluirAnimal)
+                    .addComponent(btn_editarAnimal))
                 .addGap(195, 195, 195))
         );
 
@@ -386,46 +378,38 @@ public class TelaAnimal extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txtNomeClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNomeClienteActionPerformed
+    private void txtNomeAnimalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNomeAnimalActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtNomeClienteActionPerformed
+    }//GEN-LAST:event_txtNomeAnimalActionPerformed
 
-    private void txtCpfclienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCpfclienteActionPerformed
+    private void idAnimalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_idAnimalActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtCpfclienteActionPerformed
+    }//GEN-LAST:event_idAnimalActionPerformed
 
-    private void idClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_idClienteActionPerformed
+    private void txtNasciemntoAnimalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNasciemntoAnimalActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_idClienteActionPerformed
+    }//GEN-LAST:event_txtNasciemntoAnimalActionPerformed
 
-    private void txtEnderecoClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEnderecoClienteActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtEnderecoClienteActionPerformed
-
-    private void txtCidadeClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCidadeClienteActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtCidadeClienteActionPerformed
-
-    private void btn_salvarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_salvarClienteActionPerformed
+    private void btn_salvarAnimalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_salvarAnimalActionPerformed
         // TODO add your handling code here:
         
         Cliente c = new Cliente();
         ClienteDAO dao = new ClienteDAO();   
         
         c.setCpf(txtCpfcliente.getText());
-        c.setNome(txtNomeCliente.getText());
-        c.setTelefone(txtTelefoneCliente.getText());
-        c.setEndereco(txtEnderecoCliente.getText());
+        c.setNome(txtNomeAnimal.getText());
+        c.setTelefone(txtCorAnimal.getText());
+        c.setEndereco(txtNasciemntoAnimal.getText());
         c.setCidade(txtCidadeCliente.getText());
         c.setEstado((String) txtEstadoCliente.getSelectedItem());
         
         dao.inserir(c);
         
-        idCliente.setText("");
+        idAnimal.setText("");
         txtCpfcliente.setText("");
-        txtNomeCliente.setText("");
-        txtTelefoneCliente.setText("");
-        txtEnderecoCliente.setText("");
+        txtNomeAnimal.setText("");
+        txtCorAnimal.setText("");
+        txtNasciemntoAnimal.setText("");
         txtCidadeCliente.setText("");
         txtEstadoCliente.setSelectedItem("");
         
@@ -434,13 +418,13 @@ public class TelaAnimal extends javax.swing.JFrame {
         
         
         
-    }//GEN-LAST:event_btn_salvarClienteActionPerformed
+    }//GEN-LAST:event_btn_salvarAnimalActionPerformed
 
-    private void txtTelefoneClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTelefoneClienteActionPerformed
+    private void txtCorAnimalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCorAnimalActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtTelefoneClienteActionPerformed
+    }//GEN-LAST:event_txtCorAnimalActionPerformed
 
-    private void btn_excluirSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_excluirSalvarActionPerformed
+    private void btn_excluirAnimalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_excluirAnimalActionPerformed
         // TODO add your handling code here:
         
         if(tabelaCliente.getSelectedRow() != -1){
@@ -454,9 +438,9 @@ public class TelaAnimal extends javax.swing.JFrame {
             dao.excluir(c);
             
             txtCpfcliente.setText("");
-            txtNomeCliente.setText("");
-            txtTelefoneCliente.setText("");            
-            txtEnderecoCliente.setText("");
+            txtNomeAnimal.setText("");
+            txtCorAnimal.setText("");            
+            txtNasciemntoAnimal.setText("");
             txtCidadeCliente.setText("");
             
             
@@ -467,9 +451,9 @@ public class TelaAnimal extends javax.swing.JFrame {
         }
         
         
-    }//GEN-LAST:event_btn_excluirSalvarActionPerformed
+    }//GEN-LAST:event_btn_excluirAnimalActionPerformed
 
-    private void btn_editarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_editarClienteActionPerformed
+    private void btn_editarAnimalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_editarAnimalActionPerformed
         // TODO add your handling code here:
         
         if(tabelaCliente.getSelectedRow() != -1){
@@ -477,9 +461,9 @@ public class TelaAnimal extends javax.swing.JFrame {
             ClienteDAO dao = new ClienteDAO();   
 
             c.setCpf(txtCpfcliente.getText());
-            c.setNome(txtNomeCliente.getText());
-            c.setTelefone(txtTelefoneCliente.getText());
-            c.setEndereco(txtEnderecoCliente.getText());
+            c.setNome(txtNomeAnimal.getText());
+            c.setTelefone(txtCorAnimal.getText());
+            c.setEndereco(txtNasciemntoAnimal.getText());
             c.setCidade(txtCidadeCliente.getText());
             c.setEstado((String) txtEstadoCliente.getSelectedItem());
             c.setId((int)tabelaCliente.getValueAt(tabelaCliente.getSelectedRow(), 0));
@@ -494,11 +478,11 @@ public class TelaAnimal extends javax.swing.JFrame {
         
         
         
-    }//GEN-LAST:event_btn_editarClienteActionPerformed
+    }//GEN-LAST:event_btn_editarAnimalActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        listarTabelaPorNome(txtNomeCliente.getText());
+        listarTabelaPorNome(txtNomeAnimal.getText());
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void tabelaClienteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tabelaClienteMouseClicked
@@ -506,11 +490,11 @@ public class TelaAnimal extends javax.swing.JFrame {
         
         if(tabelaCliente.getSelectedRow() != -1){
             
-            idCliente.setText(tabelaCliente.getValueAt(tabelaCliente.getSelectedRow(), 0).toString());
+            idAnimal.setText(tabelaCliente.getValueAt(tabelaCliente.getSelectedRow(), 0).toString());
             txtCpfcliente.setText(tabelaCliente.getValueAt(tabelaCliente.getSelectedRow(), 1).toString());
-            txtNomeCliente.setText(tabelaCliente.getValueAt(tabelaCliente.getSelectedRow(), 2).toString());
-            txtTelefoneCliente.setText(tabelaCliente.getValueAt(tabelaCliente.getSelectedRow(), 3).toString());
-            txtEnderecoCliente.setText(tabelaCliente.getValueAt(tabelaCliente.getSelectedRow(), 4).toString());
+            txtNomeAnimal.setText(tabelaCliente.getValueAt(tabelaCliente.getSelectedRow(), 2).toString());
+            txtCorAnimal.setText(tabelaCliente.getValueAt(tabelaCliente.getSelectedRow(), 3).toString());
+            txtNasciemntoAnimal.setText(tabelaCliente.getValueAt(tabelaCliente.getSelectedRow(), 4).toString());
             txtCidadeCliente.setText(tabelaCliente.getValueAt(tabelaCliente.getSelectedRow(), 5).toString());
             //txtEstadoCliente.getSelectedItem((tabelaCliente.getValueAt(tabelaCliente.getSelectedRow(), 0x4).toString());
         
@@ -523,17 +507,21 @@ public class TelaAnimal extends javax.swing.JFrame {
         
         if(tabelaCliente.getSelectedRow() != -1){
             
-            idCliente.setText(tabelaCliente.getValueAt(tabelaCliente.getSelectedRow(), 0).toString());
+            idAnimal.setText(tabelaCliente.getValueAt(tabelaCliente.getSelectedRow(), 0).toString());
             txtCpfcliente.setText(tabelaCliente.getValueAt(tabelaCliente.getSelectedRow(), 1).toString());
-            txtNomeCliente.setText(tabelaCliente.getValueAt(tabelaCliente.getSelectedRow(), 2).toString());
-            txtTelefoneCliente.setText(tabelaCliente.getValueAt(tabelaCliente.getSelectedRow(), 3).toString());
-            txtEnderecoCliente.setText(tabelaCliente.getValueAt(tabelaCliente.getSelectedRow(), 4).toString());
+            txtNomeAnimal.setText(tabelaCliente.getValueAt(tabelaCliente.getSelectedRow(), 2).toString());
+            txtCorAnimal.setText(tabelaCliente.getValueAt(tabelaCliente.getSelectedRow(), 3).toString());
+            txtNasciemntoAnimal.setText(tabelaCliente.getValueAt(tabelaCliente.getSelectedRow(), 4).toString());
             txtCidadeCliente.setText(tabelaCliente.getValueAt(tabelaCliente.getSelectedRow(), 5).toString());
             //txtEstadoCliente.getSelectedItem((tabelaCliente.getValueAt(tabelaCliente.getSelectedRow(), 0x4).toString());
         
         }
         
     }//GEN-LAST:event_tabelaClienteKeyReleased
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -574,29 +562,29 @@ public class TelaAnimal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btn_editarCliente;
-    private javax.swing.JButton btn_excluirSalvar;
-    private javax.swing.JButton btn_salvarCliente;
-    public javax.swing.JTextField idCliente;
+    private javax.swing.JComboBox<String> BoxSexoAnimal;
+    private javax.swing.JLabel CorAnimal;
+    private javax.swing.JLabel Id_Animal;
+    private javax.swing.JLabel NomeAminal;
+    private javax.swing.JLabel NomeDono;
+    private javax.swing.JLabel SexoAnimal;
+    private javax.swing.JButton btn_editarAnimal;
+    private javax.swing.JButton btn_excluirAnimal;
+    private javax.swing.JButton btn_salvarAnimal;
+    public javax.swing.JTextField idAnimal;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JFrame jFrame1;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel nascAnimal;
     private javax.swing.JTable tabelaCliente;
-    public javax.swing.JTextField txtCidadeCliente;
-    public javax.swing.JTextField txtCpfcliente;
-    public javax.swing.JTextField txtEnderecoCliente;
-    public javax.swing.JComboBox<String> txtEstadoCliente;
-    public javax.swing.JTextField txtNomeCliente;
-    public javax.swing.JTextField txtTelefoneCliente;
+    public javax.swing.JTextField txtCorAnimal;
+    private javax.swing.JTextField txtDono;
+    public javax.swing.JTextField txtNasciemntoAnimal;
+    public javax.swing.JTextField txtNomeAnimal;
     // End of variables declaration//GEN-END:variables
 
     //private void listarTabela() {
