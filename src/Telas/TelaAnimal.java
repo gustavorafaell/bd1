@@ -15,12 +15,12 @@ import modeloDAO.ClienteDAO;
  *
  * @author gustavo
  */
-public class TelaCliente extends javax.swing.JFrame {
+public class TelaAnimal extends javax.swing.JFrame {
 
     /**
      * Creates new form TelaCadastroCliente
      */
-    public TelaCliente() {
+    public TelaAnimal() {
         initComponents();
         
         DefaultTableModel modelo = (DefaultTableModel) tabelaCliente.getModel();
@@ -127,7 +127,7 @@ public class TelaCliente extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("TakaoPGothic", 1, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(52, 43, 43));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("CLIENTE");
+        jLabel1.setText("Animal");
 
         jLabel2.setFont(new java.awt.Font("Noto Sans", 1, 12)); // NOI18N
         jLabel2.setText("ID");
@@ -552,21 +552,23 @@ public class TelaCliente extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(TelaCliente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaAnimal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(TelaCliente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaAnimal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(TelaCliente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaAnimal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(TelaCliente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaAnimal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new TelaCliente().setVisible(true);
+                new TelaAnimal().setVisible(true);
             }
         });
     }

@@ -73,7 +73,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         bt_CadastroExtra.setBackground(new java.awt.Color(97, 212, 195));
         bt_CadastroExtra.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         bt_CadastroExtra.setForeground(new java.awt.Color(36, 47, 65));
-        bt_CadastroExtra.setText("Cadastro Extra");
+        bt_CadastroExtra.setText("Extra");
         bt_CadastroExtra.setBorder(null);
         bt_CadastroExtra.setBorderPainted(false);
         bt_CadastroExtra.setFocusPainted(false);
