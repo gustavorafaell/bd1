@@ -90,7 +90,31 @@ public class AnimalDAO {
     
     }
     
- 
+     public void atualizar(Cliente c){
+        
+        Connection con = ConexaoBD.getConexao(); // abre a conexão do banco de dados
+        PreparedStatement stmt = null;
+        
+        try {
+            stmt = con.prepareStatement("UPDATE cliente SET cpf = ?, nome = ?, telefone = ?, endereco = ?, cidade = ?, estado = ? WHERE id=?");
+            stmt.setString(1, c.getCpf());
+            stmt.setString(2, c.getNome());
+            stmt.setString(3, c.getTelefone());
+            stmt.setString(4, c.getEndereco());
+            stmt.setString(5, c.getCidade());
+            stmt.setString(6, c.getEstado());  
+            stmt.setInt(7, c.getId());
+                     
+            stmt.executeUpdate();
+            
+            JOptionPane.showMessageDialog(null, "Cliente Atualizado");    
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Erro ao Atualizar: "+ex);            
+        } finally {
+            ConexaoBD.fechaConexao(con, stmt);            
+        }
+        
+    }
     
     
     
