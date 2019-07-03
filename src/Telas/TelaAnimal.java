@@ -69,7 +69,6 @@ public class TelaAnimal extends javax.swing.JFrame {
 
         jLabel2.setText("NOME");
 
-        jTextField2.setText("jTextField2");
         jTextField2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField2ActionPerformed(evt);
@@ -78,25 +77,15 @@ public class TelaAnimal extends javax.swing.JFrame {
 
         jLabel3.setText("NASCIMENTO");
 
-        jTextField3.setText("jTextField3");
-
         jLabel4.setText("SEXO");
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "--------", "F", "M" }));
 
         jLabel5.setText("COR");
 
-        jTextField4.setText("jTextField4");
-
         jLabel6.setText("DONO");
 
-        jTextField5.setText("jTextField5");
-
-        jTextField6.setText("jTextField6");
-
         jLabel7.setText("TELEFONE");
-
-        jTextField7.setText("jTextField7");
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
