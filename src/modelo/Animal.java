@@ -5,6 +5,8 @@
  */
 package modelo;
 
+import java.util.List;
+
 /**
  *
  * @author ilzi
@@ -16,7 +18,18 @@ public class Animal {
     private String dataNasc;
     private String sexo;
     private String cor;
-    private String raça;
+    private String raca;
+    private Cliente cliente;
+    
+    
+
+    public Cliente getCliente() {
+        return cliente;
+    }
+
+    public void setCliente(Cliente cliente) {
+        this.cliente = cliente;
+    }
 
     public int getIdAnimal() {
         return idAnimal;
@@ -58,12 +71,16 @@ public class Animal {
         this.cor = cor;
     }
 
-    public String getRaça() {
-        return raça;
+    public String getRaca() {
+        return raca;
     }
 
-    public void setRaça(String raça) {
-        this.raça = raça;
+    public void setRaca(String raça) {
+        this.raca = raça;
+    }
+
+    public void add(List<Animal> animal) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
     

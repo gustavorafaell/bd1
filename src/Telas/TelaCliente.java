@@ -31,6 +31,9 @@ public class TelaCliente extends javax.swing.JFrame {
         listarTabela();
     }
     
+    String codCliente;
+    
+    
     public void listarTabela(){
         DefaultTableModel modelo = (DefaultTableModel) tabelaCliente.getModel();
         modelo.setNumRows(0);
@@ -105,6 +108,7 @@ public class TelaCliente extends javax.swing.JFrame {
         tabelaCliente = new javax.swing.JTable();
         btn_excluirSalvar = new javax.swing.JButton();
         btn_editarCliente = new javax.swing.JButton();
+        btn_selecionar = new javax.swing.JButton();
 
         javax.swing.GroupLayout jFrame1Layout = new javax.swing.GroupLayout(jFrame1.getContentPane());
         jFrame1.getContentPane().setLayout(jFrame1Layout);
@@ -265,6 +269,14 @@ public class TelaCliente extends javax.swing.JFrame {
             }
         });
 
+        btn_selecionar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/telaPrincipal/imagens/salvar.png"))); // NOI18N
+        btn_selecionar.setText("Selecionar");
+        btn_selecionar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_selecionarActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -312,6 +324,8 @@ public class TelaCliente extends javax.swing.JFrame {
                         .addContainerGap())
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(btn_selecionar)
+                        .addGap(18, 18, 18)
                         .addComponent(btn_salvarCliente)
                         .addGap(18, 18, 18)
                         .addComponent(btn_editarCliente)
@@ -365,7 +379,8 @@ public class TelaCliente extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btn_salvarCliente)
                     .addComponent(btn_excluirSalvar)
-                    .addComponent(btn_editarCliente))
+                    .addComponent(btn_editarCliente)
+                    .addComponent(btn_selecionar))
                 .addGap(195, 195, 195))
         );
 
@@ -504,6 +519,8 @@ public class TelaCliente extends javax.swing.JFrame {
     private void tabelaClienteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tabelaClienteMouseClicked
         // TODO add your handling code here:
         
+        
+        
         if(tabelaCliente.getSelectedRow() != -1){
             
             idCliente.setText(tabelaCliente.getValueAt(tabelaCliente.getSelectedRow(), 0).toString());
@@ -515,6 +532,8 @@ public class TelaCliente extends javax.swing.JFrame {
             //txtEstadoCliente.getSelectedItem((tabelaCliente.getValueAt(tabelaCliente.getSelectedRow(), 0x4).toString());
         
         }
+        
+        codCliente = ""+ tabelaCliente.getValueAt(tabelaCliente.getSelectedRow(), 0);
         
     }//GEN-LAST:event_tabelaClienteMouseClicked
 
@@ -534,6 +553,14 @@ public class TelaCliente extends javax.swing.JFrame {
         }
         
     }//GEN-LAST:event_tabelaClienteKeyReleased
+
+    private void btn_selecionarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_selecionarActionPerformed
+        // TODO add your handling code here:
+        
+//        TelaAnimais tela = new TelaAnimais(codCliente);
+//        tela.setVisible(true);
+//        dispose();
+    }//GEN-LAST:event_btn_selecionarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -575,6 +602,7 @@ public class TelaCliente extends javax.swing.JFrame {
     private javax.swing.JButton btn_editarCliente;
     private javax.swing.JButton btn_excluirSalvar;
     private javax.swing.JButton btn_salvarCliente;
+    private javax.swing.JButton btn_selecionar;
     public javax.swing.JTextField idCliente;
     private javax.swing.JButton jButton1;
     private javax.swing.JFrame jFrame1;

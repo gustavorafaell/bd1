@@ -159,6 +159,7 @@ public class ClienteDAO {
     }
         
         public void excluir(Cliente c){
+            
         
         Connection con = ConexaoBD.getConexao(); // abre a conexão do banco de dados
         PreparedStatement stmt = null;
@@ -178,7 +179,37 @@ public class ClienteDAO {
             ConexaoBD.fechaConexao(con, stmt);            
         }
         
-    }       
+    }  
+
+    public  Cliente buscarCodCliente(int cod){
+        Cliente cliente = new Cliente();
+        
+        Connection con = ConexaoBD.getConexao(); // abre a conexão do banco de dados
+        PreparedStatement stmt = null;
+        ResultSet rs = null;
+        
+        try {
+            stmt = con.prepareStatement("SELECT id, nome FROM cliente WHERE id = '"+cod+"'");
+            rs = stmt.executeQuery();
+            
+            while (rs.next()){
+                               
+                cliente.setId(rs.getInt("id"));                
+                cliente.setNome(rs.getString("nome"));
+                                      
+            }
+            
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Erro ao buscar: "+ex); 
+        } finally {
+            ConexaoBD.fechaConexao(con, stmt);            
+        }
+    
+        return cliente;
+    
+    }   
+        
+
     
     
     
