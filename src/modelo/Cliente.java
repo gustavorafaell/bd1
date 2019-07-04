@@ -19,6 +19,24 @@ public class Cliente {
     private String cidade;
     private String estado;
 
+//    public Cliente(int id, String nome) {
+//        this.id = id;
+//        this.nome = nome;
+//    }
+//
+//    public Cliente() {
+//        
+//        this.id = -1;
+//        this.nome = null;
+//        this.telefone = null;
+//        this.endereco = null;
+//        this.cidade = null;
+//        this.estado = null;
+//        
+//    }
+    
+    
+
     public int getId() {
         return id;
     }

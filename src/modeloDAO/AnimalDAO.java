@@ -29,7 +29,7 @@ public class AnimalDAO {
         PreparedStatement stmt = null;
         
         try {
-            stmt = con.prepareStatement("INSERT INTO animal (nome,dtNasc,sexo,cor,raca,idCliente) VALUES (?,?,?,?,?)");
+            stmt = con.prepareStatement("INSERT INTO animal (nome,dtNasc,sexo,cor,raca,idCliente) VALUES (?,?,?,?,?,?)");
             stmt.setString(1, a.getNome());
             stmt.setString(2, a.getDataNasc());
             stmt.setString(3, a.getSexo());
@@ -64,15 +64,19 @@ public class AnimalDAO {
             
             while (rs.next()){
                 Animal anim = new Animal();
-                
+                modelo.Cliente c = new Cliente();
+                ClienteDAO daoC = new ClienteDAO();
                
-                anim.setIdAnimal(rs.getInt("id"));
+                anim.setIdAnimal(rs.getInt("idAnimal"));
                 anim.setNome(rs.getString("nome"));
-                anim.setDataNasc(rs.getString("dataNasc"));
+                anim.setDataNasc(rs.getString("dtNasc"));
                 anim.setSexo(rs.getString("sexo"));
+                anim.setCor(rs.getString("cor"));
+                anim.setRaca(rs.getString("raca"));
+                c = daoC.buscarCodCliente(rs.getInt("idCLiente"));
+                anim.setCliente(c);
                 
-                
-                anim.add(animal);  //adiciona os dados dentro da lista clientes        
+                animal.add(anim);  //adiciona os dados dentro da lista clientes        
                        
             }
             

@@ -79,9 +79,9 @@ public class Animal {
         this.raca = raça;
     }
 
-    public void add(List<Animal> animal) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+//    public void add(List<Animal> animal) {
+//        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+//    }
     
     
     

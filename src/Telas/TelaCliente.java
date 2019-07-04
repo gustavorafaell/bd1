@@ -444,11 +444,9 @@ public class TelaCliente extends javax.swing.JFrame {
         txtCidadeCliente.setText("");
         txtEstadoCliente.setSelectedItem("");
         
-        listarTabela();
-              
+        listarTabela();             
         
-        
-        
+     
     }//GEN-LAST:event_btn_salvarClienteActionPerformed
 
     private void txtTelefoneClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTelefoneClienteActionPerformed
@@ -533,7 +531,7 @@ public class TelaCliente extends javax.swing.JFrame {
         
         }
         
-        codCliente = ""+ tabelaCliente.getValueAt(tabelaCliente.getSelectedRow(), 0);
+        //codCliente = ""+ tabelaCliente.getValueAt(tabelaCliente.getSelectedRow(), 0);
         
     }//GEN-LAST:event_tabelaClienteMouseClicked
 

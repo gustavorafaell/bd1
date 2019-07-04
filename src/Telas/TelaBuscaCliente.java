@@ -17,7 +17,11 @@ public class TelaBuscaCliente extends javax.swing.JDialog {
     /**
      * Creates new form TelaBuscaCliente
      */
-    protected Cliente nomeDono;
+    
+    
+    public String nomeCliente;
+    public String idCliente;
+//    protected Cliente nomeDono;
 
     public void listarTabela() {
         DefaultTableModel modelo = (DefaultTableModel) tabelaBuscaCliente.getModel();
@@ -41,6 +45,20 @@ public class TelaBuscaCliente extends javax.swing.JDialog {
         initComponents();
 
         listarTabela();
+    }
+    
+        public void listarTabelaPorNome(String name) {
+        DefaultTableModel modelo = (DefaultTableModel) tabelaBuscaCliente.getModel();
+        modelo.setNumRows(0);
+
+        ClienteDAO cdao = new ClienteDAO();
+
+        cdao.listarPorNome(name).forEach((c) -> {
+            modelo.addRow(new Object[]{
+                c.getId(),
+                c.getNome(),});
+        });
+
     }
 
     /**
@@ -152,16 +170,14 @@ public class TelaBuscaCliente extends javax.swing.JDialog {
 
     private void btnBuscarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarClienteActionPerformed
         // TODO add your handling code here:
+        listarTabelaPorNome(txtBuscaCliente.getText());
 
     }//GEN-LAST:event_btnBuscarClienteActionPerformed
 
     private void tabelaBuscaClienteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tabelaBuscaClienteMouseClicked
         // TODO add your handling code here:
 
-        if (tabelaBuscaCliente.getSelectedRow() != -1) {
-            this.nomeDono = (Cliente) tabelaBuscaCliente.getValueAt(tabelaBuscaCliente.getSelectedRow(), 0);
-            dispose();
-        }
+        
 
         
 
@@ -171,7 +187,18 @@ public class TelaBuscaCliente extends javax.swing.JDialog {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         
-        this.nomeDono = (Cliente) tabelaBuscaCliente.getValueAt(tabelaBuscaCliente.getSelectedRow(), 0);
+        if (tabelaBuscaCliente.getSelectedRow() != -1) {
+            ClienteDAO dao = new ClienteDAO();
+            int valor;
+            valor = (int) tabelaBuscaCliente.getValueAt(tabelaBuscaCliente.getSelectedRow(), 0);
+
+            modelo.Cliente a = dao.buscarCodCliente(valor);
+            idCliente = Integer.toString(a.getId());
+            nomeCliente = a.getNome();
+            this.dispose();
+//            JOptionPane.showMessageDialog(null, cliente.getNome(), 0));
+
+        }
         
     }//GEN-LAST:event_jButton1ActionPerformed
 
