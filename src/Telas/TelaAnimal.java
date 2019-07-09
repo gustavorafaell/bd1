@@ -47,6 +47,28 @@ public class TelaAnimal extends javax.swing.JFrame {
 
     }
 
+    public void listarTabelaPorNome(String name) {
+        DefaultTableModel modelo = (DefaultTableModel) tabelaAnimal.getModel();
+        modelo.setNumRows(0);
+
+        AnimalDAO animDao = new AnimalDAO();
+
+        animDao.listarPorNome(name).forEach((a) -> {
+            modelo.addRow(new Object[]{
+                a.getIdAnimal(),
+                a.getNome(),
+                a.getDataNasc(),
+                a.getSexo(),
+                a.getCor(),
+                a.getRaca(),
+                a.getCliente().getId(),
+                a.getCliente().getNome()
+                    
+            });
+        });
+
+    }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -114,11 +136,14 @@ public class TelaAnimal extends javax.swing.JFrame {
 
         jLabel6.setText("DONO");
 
+        txtNomeDono.setEditable(false);
         txtNomeDono.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtNomeDonoActionPerformed(evt);
             }
         });
+
+        txtIdDono.setEditable(false);
 
         tabelaAnimal.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -249,7 +274,7 @@ public class TelaAnimal extends javax.swing.JFrame {
                 .addComponent(btnCadastrarAnimal)
                 .addGap(33, 33, 33)
                 .addComponent(btnAtualizarAnimal)
-                .addGap(46, 46, 46)
+                .addGap(37, 37, 37)
                 .addComponent(jButton5)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -325,10 +350,36 @@ public class TelaAnimal extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
+        listarTabelaPorNome(txtNomeAnimal.getText());
+
+
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         // TODO add your handling code here:
+        if (tabelaAnimal.getSelectedRow() != -1) {
+
+            Animal a = new Animal();
+            AnimalDAO dao = new AnimalDAO();
+
+            a.setIdAnimal((int) tabelaAnimal.getValueAt(tabelaAnimal.getSelectedRow(), 0));
+
+            dao.excluir(a);
+
+            txtCorAnimal.setText("");
+            txtIdAnimal.setText("");
+            txtNascAnimal.setText("");
+            txtNomeAnimal.setText("");
+            txtNomeDono.setText("");
+            txtIdDono.setText("");
+            txtRaca.setText("");
+            comboBoxSexoAnimal.setSelectedIndex(0);
+
+            listarTabela();
+
+        }
+
+
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void txtNomeAnimalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNomeAnimalActionPerformed
@@ -372,7 +423,7 @@ public class TelaAnimal extends javax.swing.JFrame {
         txtNomeDono.setText("");
         txtIdDono.setText("");
         txtRaca.setText("");
-        comboBoxSexoAnimal.setSelectedItem("");
+        comboBoxSexoAnimal.setSelectedIndex(0);
 
         listarTabela();
 //        
@@ -402,37 +453,39 @@ public class TelaAnimal extends javax.swing.JFrame {
 
     private void btnAtualizarAnimalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtualizarAnimalActionPerformed
         // TODO add your handling code here:
-//        if (tabelaAnimal.getSelectedRow() != -1) {
-//            
-//                    Animal a = new Animal();
-//        AnimalDAO dao = new AnimalDAO();
-//
-//        a.setNome(txtNomeAnimal.getText());
-//        a.setDataNasc(txtNascAnimal.getText());
-//        a.setCor(txtCorAnimal.getText());
-//        a.setRaca(txtRaca.getText());
-//        a.setSexo((String) comboBoxSexoAnimal.getSelectedItem());
-//
-//        modelo.Cliente donoAnimal = new modelo.Cliente();
-//        donoAnimal.setId(Integer.parseInt(tbc.idCliente));
-//        //donoAnimal.setNome(tbc.nomeCliente);
-//
-//        a.setCliente(donoAnimal);
-//
-//        dao.inserir(a);
-//
-//        txtCorAnimal.setText("");
-//        txtIdAnimal.setText("");
-//        txtNascAnimal.setText("");
-//        txtNomeAnimal.setText("");
-//        txtNomeDono.setText("");
-//        txtIdDono.setText("");
-//        txtRaca.setText("");
-//        comboBoxSexoAnimal.setSelectedItem("");
-//
-//        listarTabela();
-//
-//        }
+        if (tabelaAnimal.getSelectedRow() != -1) {
+
+            Animal a = new Animal();
+            AnimalDAO dao = new AnimalDAO();
+
+            a.setIdAnimal(Integer.parseInt(txtIdAnimal.getText()));
+            a.setNome(txtNomeAnimal.getText());
+            a.setDataNasc(txtNascAnimal.getText());
+            a.setCor(txtCorAnimal.getText());
+            a.setRaca(txtRaca.getText());
+            a.setSexo((String) comboBoxSexoAnimal.getSelectedItem());
+
+            modelo.Cliente donoAnimal = new modelo.Cliente();
+
+            donoAnimal.setId(Integer.parseInt(txtIdDono.getText()));
+            donoAnimal.setNome(txtNomeDono.getText());
+
+            a.setCliente(donoAnimal);
+
+            dao.atualizar(a);
+
+            txtCorAnimal.setText("");
+            txtIdAnimal.setText("");
+            txtNascAnimal.setText("");
+            txtNomeAnimal.setText("");
+            txtNomeDono.setText("");
+            txtIdDono.setText("");
+            txtRaca.setText("");
+            comboBoxSexoAnimal.setSelectedIndex(0);
+
+            listarTabela();
+
+        }
 
 
     }//GEN-LAST:event_btnAtualizarAnimalActionPerformed
@@ -446,6 +499,7 @@ public class TelaAnimal extends javax.swing.JFrame {
             txtIdDono.setText(tabelaAnimal.getValueAt(tabelaAnimal.getSelectedRow(), 2).toString());
             txtNomeDono.setText(tabelaAnimal.getValueAt(tabelaAnimal.getSelectedRow(), 3).toString());
             txtNascAnimal.setText(tabelaAnimal.getValueAt(tabelaAnimal.getSelectedRow(), 4).toString());
+            comboBoxSexoAnimal.setSelectedItem(tabelaAnimal.getValueAt(tabelaAnimal.getSelectedRow(), 5).toString());
             txtCorAnimal.setText(tabelaAnimal.getValueAt(tabelaAnimal.getSelectedRow(), 6).toString());
             txtRaca.setText(tabelaAnimal.getValueAt(tabelaAnimal.getSelectedRow(), 7).toString());
             //txtEstadoCliente.getSelectedItem((tabelaCliente.getValueAt(tabelaCliente.getSelectedRow(), 0x4).toString());

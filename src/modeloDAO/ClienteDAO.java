@@ -158,7 +158,7 @@ public class ClienteDAO {
         
     }
         
-        public void excluir(Cliente c){
+    public void excluir(Cliente c){
             
         
         Connection con = ConexaoBD.getConexao(); // abre a conexão do banco de dados
