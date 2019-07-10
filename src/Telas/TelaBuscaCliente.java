@@ -86,7 +86,11 @@ public class TelaBuscaCliente extends javax.swing.JDialog {
 
         jLabel1.setText("NOME");
 
-        txtBuscaCliente.setText("jTextField1");
+        txtBuscaCliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtBuscaClienteActionPerformed(evt);
+            }
+        });
 
         tabelaBuscaCliente.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -110,6 +114,8 @@ public class TelaBuscaCliente extends javax.swing.JDialog {
             }
         });
 
+        jButton1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/telaPrincipal/imagens/salvar.png"))); // NOI18N
         jButton1.setText("Selecionar");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -150,7 +156,7 @@ public class TelaBuscaCliente extends javax.swing.JDialog {
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jButton1)
-                .addContainerGap(22, Short.MAX_VALUE))
+                .addContainerGap(13, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -201,6 +207,10 @@ public class TelaBuscaCliente extends javax.swing.JDialog {
         }
         
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void txtBuscaClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtBuscaClienteActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtBuscaClienteActionPerformed
 
     /**
      * @param args the command line arguments

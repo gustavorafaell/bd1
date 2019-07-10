@@ -32,21 +32,26 @@ public class TelaPrincipal extends javax.swing.JFrame {
         PainelBotao = new javax.swing.JPanel();
         bt_Vendas = new javax.swing.JButton();
         bt_CadastroExtra = new javax.swing.JButton();
+        bt_Pesquisar = new javax.swing.JButton();
+        bt_CadastroExtra2 = new javax.swing.JButton();
         CardPrincipal = new javax.swing.JPanel();
         Card1 = new javax.swing.JPanel();
         bt_Cad_Produto = new javax.swing.JButton();
         bt_Cad_Cliente = new javax.swing.JButton();
         bt_Cad_Animal = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
         Card2 = new javax.swing.JPanel();
         bt_buscarAnimal = new javax.swing.JButton();
         jButton11 = new javax.swing.JButton();
         bt_buscarCliente = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
         Card3 = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
         jButton7 = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
 
-        setTitle("PeShopt ");
+        setTitle("PetShop");
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         setLocationByPlatform(true);
         setResizable(false);
@@ -68,7 +73,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
                 bt_VendasActionPerformed(evt);
             }
         });
-        PainelBotao.add(bt_Vendas, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 210, 190, -1));
+        PainelBotao.add(bt_Vendas, new org.netbeans.lib.awtextra.AbsoluteConstraints(-20, 290, 190, -1));
 
         bt_CadastroExtra.setBackground(new java.awt.Color(97, 212, 195));
         bt_CadastroExtra.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -84,7 +89,39 @@ public class TelaPrincipal extends javax.swing.JFrame {
                 bt_CadastroExtraActionPerformed(evt);
             }
         });
-        PainelBotao.add(bt_CadastroExtra, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 150, 190, -1));
+        PainelBotao.add(bt_CadastroExtra, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 240, 190, -1));
+
+        bt_Pesquisar.setBackground(new java.awt.Color(97, 212, 195));
+        bt_Pesquisar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        bt_Pesquisar.setForeground(new java.awt.Color(36, 47, 65));
+        bt_Pesquisar.setText("Pesquisar");
+        bt_Pesquisar.setBorder(null);
+        bt_Pesquisar.setBorderPainted(false);
+        bt_Pesquisar.setFocusPainted(false);
+        bt_Pesquisar.setFocusable(false);
+        bt_Pesquisar.setPreferredSize(new java.awt.Dimension(170, 40));
+        bt_Pesquisar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bt_PesquisarActionPerformed(evt);
+            }
+        });
+        PainelBotao.add(bt_Pesquisar, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 190, 190, -1));
+
+        bt_CadastroExtra2.setBackground(new java.awt.Color(97, 212, 195));
+        bt_CadastroExtra2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        bt_CadastroExtra2.setForeground(new java.awt.Color(36, 47, 65));
+        bt_CadastroExtra2.setText("Pagina Principal");
+        bt_CadastroExtra2.setBorder(null);
+        bt_CadastroExtra2.setBorderPainted(false);
+        bt_CadastroExtra2.setFocusPainted(false);
+        bt_CadastroExtra2.setFocusable(false);
+        bt_CadastroExtra2.setPreferredSize(new java.awt.Dimension(170, 40));
+        bt_CadastroExtra2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bt_CadastroExtra2ActionPerformed(evt);
+            }
+        });
+        PainelBotao.add(bt_CadastroExtra2, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 130, 190, -1));
 
         CardPrincipal.setEnabled(false);
         CardPrincipal.setLayout(new java.awt.CardLayout());
@@ -124,30 +161,40 @@ public class TelaPrincipal extends javax.swing.JFrame {
             }
         });
 
+        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel2.setText("PÁGINA PRINCIPAL");
+
         javax.swing.GroupLayout Card1Layout = new javax.swing.GroupLayout(Card1);
         Card1.setLayout(Card1Layout);
         Card1Layout.setHorizontalGroup(
             Card1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(Card1Layout.createSequentialGroup()
-                .addGap(67, 67, 67)
                 .addGroup(Card1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(bt_Cad_Cliente)
                     .addGroup(Card1Layout.createSequentialGroup()
-                        .addComponent(bt_Cad_Animal)
-                        .addGap(160, 160, 160)
-                        .addComponent(bt_Cad_Produto)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(67, 67, 67)
+                        .addGroup(Card1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(bt_Cad_Cliente)
+                            .addGroup(Card1Layout.createSequentialGroup()
+                                .addComponent(bt_Cad_Animal)
+                                .addGap(160, 160, 160)
+                                .addComponent(bt_Cad_Produto))))
+                    .addGroup(Card1Layout.createSequentialGroup()
+                        .addGap(250, 250, 250)
+                        .addComponent(jLabel2)))
+                .addContainerGap(148, Short.MAX_VALUE))
         );
         Card1Layout.setVerticalGroup(
             Card1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(Card1Layout.createSequentialGroup()
-                .addGap(106, 106, 106)
+                .addContainerGap()
+                .addComponent(jLabel2)
+                .addGap(79, 79, 79)
                 .addGroup(Card1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(bt_Cad_Animal)
                     .addComponent(bt_Cad_Produto))
-                .addGap(76, 76, 76)
+                .addGap(81, 81, 81)
                 .addComponent(bt_Cad_Cliente)
-                .addContainerGap(60, Short.MAX_VALUE))
+                .addContainerGap(55, Short.MAX_VALUE))
         );
 
         CardPrincipal.add(Card1, "tela1");
@@ -187,30 +234,40 @@ public class TelaPrincipal extends javax.swing.JFrame {
             }
         });
 
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel1.setText("PESQUISAR");
+
         javax.swing.GroupLayout Card2Layout = new javax.swing.GroupLayout(Card2);
         Card2.setLayout(Card2Layout);
         Card2Layout.setHorizontalGroup(
             Card2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(Card2Layout.createSequentialGroup()
-                .addGap(67, 67, 67)
                 .addGroup(Card2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(bt_buscarCliente)
                     .addGroup(Card2Layout.createSequentialGroup()
-                        .addComponent(bt_buscarAnimal)
-                        .addGap(160, 160, 160)
-                        .addComponent(jButton11)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(67, 67, 67)
+                        .addGroup(Card2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(bt_buscarCliente)
+                            .addGroup(Card2Layout.createSequentialGroup()
+                                .addComponent(bt_buscarAnimal)
+                                .addGap(160, 160, 160)
+                                .addComponent(jButton11))))
+                    .addGroup(Card2Layout.createSequentialGroup()
+                        .addGap(259, 259, 259)
+                        .addComponent(jLabel1)))
+                .addContainerGap(148, Short.MAX_VALUE))
         );
         Card2Layout.setVerticalGroup(
             Card2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(Card2Layout.createSequentialGroup()
-                .addGap(106, 106, 106)
+                .addContainerGap()
+                .addComponent(jLabel1)
+                .addGap(79, 79, 79)
                 .addGroup(Card2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(bt_buscarAnimal)
                     .addComponent(jButton11))
-                .addGap(82, 82, 82)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 83, Short.MAX_VALUE)
                 .addComponent(bt_buscarCliente)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(53, 53, 53))
         );
 
         CardPrincipal.add(Card2, "card3");
@@ -238,24 +295,34 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jButton7.setBorderPainted(false);
         jButton7.setFocusPainted(false);
 
+        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel3.setText("EXTRA");
+
         javax.swing.GroupLayout Card3Layout = new javax.swing.GroupLayout(Card3);
         Card3.setLayout(Card3Layout);
         Card3Layout.setHorizontalGroup(
             Card3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(Card3Layout.createSequentialGroup()
-                .addGap(67, 67, 67)
                 .addGroup(Card3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton7)
                     .addGroup(Card3Layout.createSequentialGroup()
-                        .addComponent(jButton1)
-                        .addGap(160, 160, 160)
-                        .addComponent(jButton5)))
+                        .addGap(67, 67, 67)
+                        .addGroup(Card3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jButton7)
+                            .addGroup(Card3Layout.createSequentialGroup()
+                                .addComponent(jButton1)
+                                .addGap(160, 160, 160)
+                                .addComponent(jButton5))))
+                    .addGroup(Card3Layout.createSequentialGroup()
+                        .addGap(283, 283, 283)
+                        .addComponent(jLabel3)))
                 .addGap(117, 117, 117))
         );
         Card3Layout.setVerticalGroup(
             Card3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(Card3Layout.createSequentialGroup()
-                .addGap(106, 106, 106)
+                .addContainerGap()
+                .addComponent(jLabel3)
+                .addGap(79, 79, 79)
                 .addGroup(Card3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton1)
                     .addComponent(jButton5))
@@ -291,18 +358,18 @@ public class TelaPrincipal extends javax.swing.JFrame {
         // TODO add your handling code here:
         //CardLayout cl = (CardLayout) CardPrincipal.getLayout();
         //cl.show(CardPrincipal, "tela2");
-        
-        
+
+
     }//GEN-LAST:event_bt_VendasActionPerformed
 
     private void bt_CadastroExtraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_CadastroExtraActionPerformed
         // TODO add your handling code here:
-        
+
         CardPrincipal.removeAll();
         CardPrincipal.add(Card3);
         CardPrincipal.repaint();
         CardPrincipal.revalidate();
-        
+
     }//GEN-LAST:event_bt_CadastroExtraActionPerformed
 
     private void bt_Cad_ProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_Cad_ProdutoActionPerformed
@@ -317,16 +384,17 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
     private void bt_Cad_AnimalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_Cad_AnimalActionPerformed
         // TODO add your handling code here:
-       TelaAnimal tela = new TelaAnimal();
-       tela.setVisible(true);
-        
+        TelaAnimal tela = new TelaAnimal();
+        tela.setVisible(true);
+
     }//GEN-LAST:event_bt_Cad_AnimalActionPerformed
 
     private void bt_buscarAnimalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_buscarAnimalActionPerformed
         // TODO add your handling code here:
+        TelaPesquisarAnimal tela = new TelaPesquisarAnimal(this, rootPaneCheckingEnabled);
+        tela.setVisible(true);
         
-       //new TelaCadastroAnimal().setVisible(true);
-       
+
     }//GEN-LAST:event_bt_buscarAnimalActionPerformed
 
     private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
@@ -335,12 +403,31 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
     private void bt_buscarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_buscarClienteActionPerformed
         // TODO add your handling code here:
-        
+
 //        TelaPesquisaCliente tela = new TelaPesquisaCliente();
 //        tela.setVisible(true);
 //        
-        
+
     }//GEN-LAST:event_bt_buscarClienteActionPerformed
+
+    private void bt_PesquisarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_PesquisarActionPerformed
+        // TODO add your handling code here:
+        CardPrincipal.removeAll();
+        CardPrincipal.add(Card2);
+        CardPrincipal.repaint();
+        CardPrincipal.revalidate();
+
+    }//GEN-LAST:event_bt_PesquisarActionPerformed
+
+    private void bt_CadastroExtra2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_CadastroExtra2ActionPerformed
+        // TODO add your handling code here:
+
+        CardPrincipal.removeAll();
+        CardPrincipal.add(Card1);
+        CardPrincipal.repaint();
+        CardPrincipal.revalidate();
+
+    }//GEN-LAST:event_bt_CadastroExtra2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -387,6 +474,8 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JButton bt_Cad_Cliente;
     private javax.swing.JButton bt_Cad_Produto;
     private javax.swing.JButton bt_CadastroExtra;
+    private javax.swing.JButton bt_CadastroExtra2;
+    private javax.swing.JButton bt_Pesquisar;
     private javax.swing.JButton bt_Vendas;
     private javax.swing.JButton bt_buscarAnimal;
     private javax.swing.JButton bt_buscarCliente;
@@ -394,5 +483,8 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JButton jButton11;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton7;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     // End of variables declaration//GEN-END:variables
 }

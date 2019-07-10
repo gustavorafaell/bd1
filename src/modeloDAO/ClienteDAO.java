@@ -189,13 +189,14 @@ public class ClienteDAO {
         ResultSet rs = null;
         
         try {
-            stmt = con.prepareStatement("SELECT id, nome FROM cliente WHERE id = '"+cod+"'");
+            stmt = con.prepareStatement("SELECT id, nome, telefone FROM cliente WHERE id = '"+cod+"'");
             rs = stmt.executeQuery();
             
             while (rs.next()){
                                
                 cliente.setId(rs.getInt("id"));                
                 cliente.setNome(rs.getString("nome"));
+                cliente.setTelefone(rs.getString("telefone"));
                                       
             }
             
