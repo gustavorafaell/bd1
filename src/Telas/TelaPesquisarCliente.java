@@ -6,60 +6,55 @@
 package Telas;
 
 import javax.swing.table.DefaultTableModel;
-import modeloDAO.AnimalDAO;
 import modeloDAO.ClienteDAO;
 
 /**
  *
  * @author ilzi
  */
-public class TelaPesquisarAnimal extends javax.swing.JDialog {
-
-
-    public void listarTabela() {
-        DefaultTableModel modelo = (DefaultTableModel) tabelaAnimal.getModel();
-        modelo.setNumRows(0);
-
-        AnimalDAO dao = new AnimalDAO();
-        ClienteDAO cdao = new ClienteDAO();
-
-        dao.listar().forEach((a) -> {
-            modelo.Cliente c;
-            c = cdao.buscarCodCliente(a.getCliente().getId());
-            modelo.addRow(new Object[]{
-                a.getIdAnimal(),
-                a.getNome(),
-                c.getNome(),
-                c.getTelefone(),});
-        });
-
-    }
+public class TelaPesquisarCliente extends javax.swing.JDialog {
 
     /**
-     * Creates new form TelaPesquisarAnimal
+     * Creates new form TelaPesquisarCliente
      */
-    public TelaPesquisarAnimal(java.awt.Frame parent, boolean modal) {
+    public TelaPesquisarCliente(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
 
         listarTabela();
     }
 
-    public void listarTabelaPorNome(String name) {
-        DefaultTableModel modelo = (DefaultTableModel) tabelaAnimal.getModel();
+    public void listarTabela() {
+        DefaultTableModel modelo = (DefaultTableModel) tabelaPesquisarCliente.getModel();
         modelo.setNumRows(0);
 
-        AnimalDAO animDao = new AnimalDAO();
         ClienteDAO cdao = new ClienteDAO();
 
-        animDao.listarPorNome(name).forEach((a) -> {
-            modelo.Cliente c;
-            c = cdao.buscarCodCliente(a.getCliente().getId());
+        cdao.listar().forEach((c) -> {
             modelo.addRow(new Object[]{
-                a.getIdAnimal(),
-                a.getNome(),
+                c.getId(),
+                c.getCpf(),
                 c.getNome(),
-                c.getTelefone(),
+                c.getTelefone()
+
+            });
+        });
+
+    }
+
+    public void listarTabelaPorNome(String name) {
+        DefaultTableModel modelo = (DefaultTableModel) tabelaPesquisarCliente.getModel();
+        modelo.setNumRows(0);
+
+        ClienteDAO cdao = new ClienteDAO();
+
+        cdao.listarPorNome(name).forEach((c) -> {
+            modelo.addRow(new Object[]{
+                c.getId(),
+                c.getCpf(),
+                c.getNome(),
+                c.getTelefone()
+
             });
         });
 
@@ -76,24 +71,24 @@ public class TelaPesquisarAnimal extends javax.swing.JDialog {
 
         jPanel1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        tabelaAnimal = new javax.swing.JTable();
+        tabelaPesquisarCliente = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
-        txtNomeAnimal = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
+        txtPesquisarCliente = new javax.swing.JTextField();
+        jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(654, 445));
 
         jPanel1.setBackground(new java.awt.Color(153, 204, 255));
 
-        tabelaAnimal.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        tabelaAnimal.setModel(new javax.swing.table.DefaultTableModel(
+        tabelaPesquisarCliente.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "ID ANIMAL", "NOME", "DONO", "TELEFONE"
+                "ID CLIENTE", "CPF", "NOME", "TELEFONE"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -104,16 +99,25 @@ public class TelaPesquisarAnimal extends javax.swing.JDialog {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane1.setViewportView(tabelaAnimal);
-        if (tabelaAnimal.getColumnModel().getColumnCount() > 0) {
-            tabelaAnimal.getColumnModel().getColumn(0).setResizable(false);
-            tabelaAnimal.getColumnModel().getColumn(1).setResizable(false);
-            tabelaAnimal.getColumnModel().getColumn(2).setResizable(false);
-            tabelaAnimal.getColumnModel().getColumn(3).setResizable(false);
+        jScrollPane1.setViewportView(tabelaPesquisarCliente);
+        if (tabelaPesquisarCliente.getColumnModel().getColumnCount() > 0) {
+            tabelaPesquisarCliente.getColumnModel().getColumn(0).setResizable(false);
+            tabelaPesquisarCliente.getColumnModel().getColumn(1).setResizable(false);
+            tabelaPesquisarCliente.getColumnModel().getColumn(2).setResizable(false);
+            tabelaPesquisarCliente.getColumnModel().getColumn(3).setResizable(false);
         }
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel1.setText("PESQUISAR");
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel1.setText("CLIENTES CADASTRADOS");
+
+        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel2.setText("PESQUISAR POR NOME");
+
+        txtPesquisarCliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtPesquisarClienteActionPerformed(evt);
+            }
+        });
 
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/telaPrincipal/imagens/pesq.png"))); // NOI18N
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -122,10 +126,6 @@ public class TelaPesquisarAnimal extends javax.swing.JDialog {
             }
         });
 
-        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel2.setText("ANIMAIS CADASTRADOS");
-
-        jButton2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/telaPrincipal/imagens/salvar.png"))); // NOI18N
         jButton2.setText("Novo");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -143,40 +143,40 @@ public class TelaPesquisarAnimal extends javax.swing.JDialog {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jScrollPane1)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(215, 215, 215)
                                 .addComponent(jLabel2)
-                                .addGap(0, 0, Short.MAX_VALUE)))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txtPesquisarCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 344, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(37, 37, 37)
+                                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 60, Short.MAX_VALUE)))
                         .addContainerGap())
-                    .addGroup(jPanel1Layout.createSequentialGroup()
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(jLabel1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(txtNomeAnimal, javax.swing.GroupLayout.PREFERRED_SIZE, 444, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 52, Short.MAX_VALUE)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(20, 20, 20))))
+                        .addGap(205, 205, 205))))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton2)
+                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, Short.MAX_VALUE)
+                .addComponent(jLabel1)
+                .addGap(21, 21, 21)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel1)
-                        .addComponent(txtNomeAnimal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jLabel2)
+                        .addComponent(txtPesquisarCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jButton1))
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 267, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 289, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButton2)
-                .addContainerGap())
+                .addGap(13, 13, 13))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -187,25 +187,30 @@ public class TelaPesquisarAnimal extends javax.swing.JDialog {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
+    private void txtPesquisarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPesquisarClienteActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtPesquisarClienteActionPerformed
+
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        
-        listarTabelaPorNome(txtNomeAnimal.getText());
+        listarTabelaPorNome(txtPesquisarCliente.getText());
         
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
-        TelaAnimal tela = new TelaAnimal();
+        
+        TelaCliente tela = new TelaCliente();
         tela.setVisible(true);
         dispose();
+        
     }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
@@ -225,20 +230,20 @@ public class TelaPesquisarAnimal extends javax.swing.JDialog {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(TelaPesquisarAnimal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaPesquisarCliente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(TelaPesquisarAnimal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaPesquisarCliente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(TelaPesquisarAnimal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaPesquisarCliente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(TelaPesquisarAnimal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaPesquisarCliente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the dialog */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                TelaPesquisarAnimal dialog = new TelaPesquisarAnimal(new javax.swing.JFrame(), true);
+                TelaPesquisarCliente dialog = new TelaPesquisarCliente(new javax.swing.JFrame(), true);
                 dialog.addWindowListener(new java.awt.event.WindowAdapter() {
                     @Override
                     public void windowClosing(java.awt.event.WindowEvent e) {
@@ -257,7 +262,7 @@ public class TelaPesquisarAnimal extends javax.swing.JDialog {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable tabelaAnimal;
-    private javax.swing.JTextField txtNomeAnimal;
+    private javax.swing.JTable tabelaPesquisarCliente;
+    private javax.swing.JTextField txtPesquisarCliente;
     // End of variables declaration//GEN-END:variables
 }

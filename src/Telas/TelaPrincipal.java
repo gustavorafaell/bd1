@@ -34,22 +34,26 @@ public class TelaPrincipal extends javax.swing.JFrame {
         bt_CadastroExtra = new javax.swing.JButton();
         bt_Pesquisar = new javax.swing.JButton();
         bt_CadastroExtra2 = new javax.swing.JButton();
+        jLabel5 = new javax.swing.JLabel();
         CardPrincipal = new javax.swing.JPanel();
         Card1 = new javax.swing.JPanel();
         bt_Cad_Produto = new javax.swing.JButton();
         bt_Cad_Cliente = new javax.swing.JButton();
         bt_Cad_Animal = new javax.swing.JButton();
+        jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         Card2 = new javax.swing.JPanel();
         bt_buscarAnimal = new javax.swing.JButton();
         jButton11 = new javax.swing.JButton();
         bt_buscarCliente = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
+        jLabel4 = new javax.swing.JLabel();
         Card3 = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
         jButton7 = new javax.swing.JButton();
-        jLabel3 = new javax.swing.JLabel();
+        jPanel3 = new javax.swing.JPanel();
+        jLabel6 = new javax.swing.JLabel();
 
         setTitle("PetShop");
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -73,7 +77,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
                 bt_VendasActionPerformed(evt);
             }
         });
-        PainelBotao.add(bt_Vendas, new org.netbeans.lib.awtextra.AbsoluteConstraints(-20, 290, 190, -1));
+        PainelBotao.add(bt_Vendas, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 340, 250, -1));
 
         bt_CadastroExtra.setBackground(new java.awt.Color(97, 212, 195));
         bt_CadastroExtra.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -89,7 +93,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
                 bt_CadastroExtraActionPerformed(evt);
             }
         });
-        PainelBotao.add(bt_CadastroExtra, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 240, 190, -1));
+        PainelBotao.add(bt_CadastroExtra, new org.netbeans.lib.awtextra.AbsoluteConstraints(-20, 290, 270, -1));
 
         bt_Pesquisar.setBackground(new java.awt.Color(97, 212, 195));
         bt_Pesquisar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -105,12 +109,12 @@ public class TelaPrincipal extends javax.swing.JFrame {
                 bt_PesquisarActionPerformed(evt);
             }
         });
-        PainelBotao.add(bt_Pesquisar, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 190, 190, -1));
+        PainelBotao.add(bt_Pesquisar, new org.netbeans.lib.awtextra.AbsoluteConstraints(-20, 240, 270, -1));
 
         bt_CadastroExtra2.setBackground(new java.awt.Color(97, 212, 195));
         bt_CadastroExtra2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         bt_CadastroExtra2.setForeground(new java.awt.Color(36, 47, 65));
-        bt_CadastroExtra2.setText("Pagina Principal");
+        bt_CadastroExtra2.setText("Pagina Inicial");
         bt_CadastroExtra2.setBorder(null);
         bt_CadastroExtra2.setBorderPainted(false);
         bt_CadastroExtra2.setFocusPainted(false);
@@ -121,12 +125,16 @@ public class TelaPrincipal extends javax.swing.JFrame {
                 bt_CadastroExtra2ActionPerformed(evt);
             }
         });
-        PainelBotao.add(bt_CadastroExtra2, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 130, 190, -1));
+        PainelBotao.add(bt_CadastroExtra2, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 190, 260, -1));
+
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/telaPrincipal/imagens/logo2.png"))); // NOI18N
+        PainelBotao.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 0, -1, 189));
 
         CardPrincipal.setEnabled(false);
         CardPrincipal.setLayout(new java.awt.CardLayout());
 
         Card1.setBackground(new java.awt.Color(153, 204, 255));
+        Card1.setForeground(new java.awt.Color(36, 47, 65));
 
         bt_Cad_Produto.setBackground(new java.awt.Color(153, 204, 255));
         bt_Cad_Produto.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -161,34 +169,50 @@ public class TelaPrincipal extends javax.swing.JFrame {
             }
         });
 
+        jPanel1.setBackground(new java.awt.Color(36, 47, 65));
+
+        jLabel2.setBackground(new java.awt.Color(97, 212, 195));
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel2.setText("PÁGINA PRINCIPAL");
+        jLabel2.setForeground(new java.awt.Color(97, 212, 195));
+        jLabel2.setText("Página Inicial");
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(237, 237, 237)
+                .addComponent(jLabel2)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addComponent(jLabel2)
+                .addContainerGap(29, Short.MAX_VALUE))
+        );
 
         javax.swing.GroupLayout Card1Layout = new javax.swing.GroupLayout(Card1);
         Card1.setLayout(Card1Layout);
         Card1Layout.setHorizontalGroup(
             Card1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(Card1Layout.createSequentialGroup()
+                .addGap(67, 67, 67)
                 .addGroup(Card1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(bt_Cad_Cliente)
                     .addGroup(Card1Layout.createSequentialGroup()
-                        .addGap(67, 67, 67)
-                        .addGroup(Card1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(bt_Cad_Cliente)
-                            .addGroup(Card1Layout.createSequentialGroup()
-                                .addComponent(bt_Cad_Animal)
-                                .addGap(160, 160, 160)
-                                .addComponent(bt_Cad_Produto))))
-                    .addGroup(Card1Layout.createSequentialGroup()
-                        .addGap(250, 250, 250)
-                        .addComponent(jLabel2)))
+                        .addComponent(bt_Cad_Animal)
+                        .addGap(160, 160, 160)
+                        .addComponent(bt_Cad_Produto)))
                 .addContainerGap(148, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         Card1Layout.setVerticalGroup(
             Card1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(Card1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel2)
-                .addGap(79, 79, 79)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(42, 42, 42)
                 .addGroup(Card1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(bt_Cad_Animal)
                     .addComponent(bt_Cad_Produto))
@@ -234,34 +258,50 @@ public class TelaPrincipal extends javax.swing.JFrame {
             }
         });
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel1.setText("PESQUISAR");
+        jPanel2.setBackground(new java.awt.Color(36, 47, 65));
+
+        jLabel4.setBackground(new java.awt.Color(97, 212, 195));
+        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(97, 212, 195));
+        jLabel4.setText("Pesquisar");
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(262, 262, 262)
+                .addComponent(jLabel4)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(22, 22, 22)
+                .addComponent(jLabel4)
+                .addContainerGap(27, Short.MAX_VALUE))
+        );
 
         javax.swing.GroupLayout Card2Layout = new javax.swing.GroupLayout(Card2);
         Card2.setLayout(Card2Layout);
         Card2Layout.setHorizontalGroup(
             Card2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(Card2Layout.createSequentialGroup()
+                .addGap(67, 67, 67)
                 .addGroup(Card2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(bt_buscarCliente)
                     .addGroup(Card2Layout.createSequentialGroup()
-                        .addGap(67, 67, 67)
-                        .addGroup(Card2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(bt_buscarCliente)
-                            .addGroup(Card2Layout.createSequentialGroup()
-                                .addComponent(bt_buscarAnimal)
-                                .addGap(160, 160, 160)
-                                .addComponent(jButton11))))
-                    .addGroup(Card2Layout.createSequentialGroup()
-                        .addGap(259, 259, 259)
-                        .addComponent(jLabel1)))
+                        .addComponent(bt_buscarAnimal)
+                        .addGap(160, 160, 160)
+                        .addComponent(jButton11)))
                 .addContainerGap(148, Short.MAX_VALUE))
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         Card2Layout.setVerticalGroup(
             Card2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(Card2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1)
-                .addGap(79, 79, 79)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(42, 42, 42)
                 .addGroup(Card2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(bt_buscarAnimal)
                     .addComponent(jButton11))
@@ -295,34 +335,50 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jButton7.setBorderPainted(false);
         jButton7.setFocusPainted(false);
 
-        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel3.setText("EXTRA");
+        jPanel3.setBackground(new java.awt.Color(36, 47, 65));
+
+        jLabel6.setBackground(new java.awt.Color(97, 212, 195));
+        jLabel6.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(97, 212, 195));
+        jLabel6.setText("Extra");
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(295, 295, 295)
+                .addComponent(jLabel6)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                .addContainerGap(25, Short.MAX_VALUE)
+                .addComponent(jLabel6)
+                .addGap(24, 24, 24))
+        );
 
         javax.swing.GroupLayout Card3Layout = new javax.swing.GroupLayout(Card3);
         Card3.setLayout(Card3Layout);
         Card3Layout.setHorizontalGroup(
             Card3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(Card3Layout.createSequentialGroup()
+                .addGap(67, 67, 67)
                 .addGroup(Card3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButton7)
                     .addGroup(Card3Layout.createSequentialGroup()
-                        .addGap(67, 67, 67)
-                        .addGroup(Card3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButton7)
-                            .addGroup(Card3Layout.createSequentialGroup()
-                                .addComponent(jButton1)
-                                .addGap(160, 160, 160)
-                                .addComponent(jButton5))))
-                    .addGroup(Card3Layout.createSequentialGroup()
-                        .addGap(283, 283, 283)
-                        .addComponent(jLabel3)))
+                        .addComponent(jButton1)
+                        .addGap(160, 160, 160)
+                        .addComponent(jButton5)))
                 .addGap(117, 117, 117))
+            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         Card3Layout.setVerticalGroup(
             Card3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(Card3Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel3)
-                .addGap(79, 79, 79)
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(42, 42, 42)
                 .addGroup(Card3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton1)
                     .addComponent(jButton5))
@@ -338,7 +394,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(PainelBotao, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(PainelBotao, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(CardPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -403,6 +459,9 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
     private void bt_buscarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_buscarClienteActionPerformed
         // TODO add your handling code here:
+        
+        TelaPesquisarCliente tela = new TelaPesquisarCliente(this, rootPaneCheckingEnabled);
+        tela.setVisible(true);
 
 //        TelaPesquisaCliente tela = new TelaPesquisaCliente();
 //        tela.setVisible(true);
@@ -483,8 +542,12 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JButton jButton11;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton7;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
     // End of variables declaration//GEN-END:variables
 }
