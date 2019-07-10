@@ -9,10 +9,8 @@ import javax.swing.table.DefaultTableModel;
 import modeloDAO.AnimalDAO;
 import modeloDAO.ClienteDAO;
 
-/**
- *
- * @author ilzi
- */
+
+
 public class TelaPesquisarAnimal extends javax.swing.JDialog {
 
 
